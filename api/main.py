@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from http import HTTPStatus
 from db.db import createDB
-from models.Users import newUser, allUsers, emailUnicode
+from controllers.Users import newUser, allUsers, emailUnicode
 
 app = Flask(__name__)
 
