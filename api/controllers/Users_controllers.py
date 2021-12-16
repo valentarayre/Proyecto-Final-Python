@@ -37,9 +37,16 @@ def allUsers():
 
     intruciones = f"SELECT * FROM Users"
     cursor.execute(intruciones)
-    datos = cursor.fetchall()
+    datos = []
+    for row in cursor.execute(intruciones):        
+        aux = {"id":row[0],"username":row[1],"email":row[2],"password":row[3]}        
+        datos.append(aux)    
 
     conn.commit()
     conn.close()
     
     return datos
+
+if __name__ == "__main__":
+    allUsers()
+    pass

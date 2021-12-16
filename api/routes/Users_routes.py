@@ -1,13 +1,12 @@
-from flask import Flask, jsonify, request
+from flask import jsonify, request
 from http import HTTPStatus
-from main import app
 from controllers.Users_controllers import newUser, allUsers, emailUnicode
 
-@app.route("/api/Users", methods=['GET'])
+
 def get_Users():
     return jsonify(allUsers()), HTTPStatus.OK
 
-@app.route("/api/Register", methods=['POST'])
+
 def post_Users():
 
     user = request.get_json()
