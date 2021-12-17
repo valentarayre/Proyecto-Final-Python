@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+header
+{   
+    background-color: #1D3B41;
+    width: 100%;
+    min-height: 2rem;
+    max-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+}
+#logoMain{
+    margin:1.75rem;
+    max-width: 2.5rem;
+    min-width: 2rem;
+}
+ul li{
+    display: inline;
+    margin-right: 3rem;
+}
+a{text-decoration: none;}
+.navStyle{
+    position: relative;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #23C686;
+    font-weight: 300;
+    font-size: 15px;
+}
+.navStyle:after{
+    content: "";
+    position: absolute;
+    background-color: #23C686;
+    border-radius: 4px;
+    height: 2px;
+    width: 0px;
+    left: 0px;
+    bottom: -5px;
+    transition: 0.3s;
+}
+.navStyle:hover:after{width: 100%;}
+#logBttn{
+    font-family: 'Roboto', sans-serif;
+    color: #23C686;
+    font-size: 15px;
+    border: solid 2px #23C686;
+    background-color: transparent;
+    width: 125px;
+    height: 35px;
+    border-radius: 50px;}
+
+#logBttn:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    color: #1D3B41;
+    background-color: #23C686;
+}

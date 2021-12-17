@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--  links   -->
+    <link rel="stylesheet" href="indexstyle.css">
     <script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
 </head>
 <body>
+    <header>
+        <a href="#"><img src="" alt="Logo" id="logoMain"></a>
+        <ul>
+            <li>
+                <a class="navStyle" href="#">Peliculas</a>
+            </li>
+            <li>
+                <a class="navStyle" href="#">Directores</a>
+            </li>
+            <li>
+                <button id="logBttn">Iniciar sesión</button>
+            </li>
+        </ul>    
+    </header>   
+
     <div id="app">
         {{data}}        
     </div>    
