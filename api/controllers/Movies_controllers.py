@@ -2,13 +2,20 @@ import sqlite3 as sql
 
 baseDatos = './api/db/db.sqlite3'
 
-def newMovie(username, email, password):
+def existDirector(id):
+    return True
+def existGenero(id):
+    return True
+def existTitleDirector(title):
+    return True
+
+def newMovie(title,sinopsis,image_url,id_director,id_genero):
     global baseDatos
     
     conn = sql.connect(baseDatos)
     cursor = conn.cursor()
     
-    intruciones = f"INSERT INTO Movies VALUES (null, '{username}', '{email}', '{password}')"
+    intruciones = f"INSERT INTO Movies VALUES (null,'{title}','{sinopsis}','{image_url}','{id_director}','{id_genero}')"
     cursor.execute(intruciones)
     
 
