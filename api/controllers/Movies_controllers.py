@@ -2,12 +2,28 @@ import sqlite3 as sql
 
 baseDatos = './api/db/db.sqlite3'
 
-def existDirector(id):
-    return True
-def existGenero(id):
-    return True
-def existTitleDirector(title):
-    return True
+def formatData(data):
+    nameColums = ('id','title','sinopsis','image_url','id_director','id_genero')
+    dataForm = {}
+    cont = 0
+    
+    for e in data:
+        dataForm[nameColums[cont]] = e
+        cont += 1
+    return dataForm
+
+def exists(params,table):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"SELECT * FROM '{table}' WHERE id = '{params}'"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
+    
+    conn.commit()
+    conn.close()
+    return datos != 0
 
 def newMovie(title,sinopsis,image_url,id_director,id_genero):
     global baseDatos
@@ -18,9 +34,24 @@ def newMovie(title,sinopsis,image_url,id_director,id_genero):
     intruciones = f"INSERT INTO Movies VALUES (null,'{title}','{sinopsis}','{image_url}','{id_director}','{id_genero}')"
     cursor.execute(intruciones)
     
+    conn.commit()
+    conn.close()
+
+def MovieId(id):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"SELECT * FROM Movies WHERE id = '{id}'"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
 
     conn.commit()
     conn.close()
+    
+    if len(datos) != 0:        
+        return formatData(datos[0])
+    return False
 
 def allMovies():
     global baseDatos
@@ -30,8 +61,30 @@ def allMovies():
     intruciones = f"SELECT * FROM Movies"
     cursor.execute(intruciones)
     datos = cursor.fetchall()
+    
+    conn.commit()
+    conn.close()
+
+    listDatos = []
+    for e in datos:
+        listDatos.append(formatData(e))
+    
+    return listDatos
+
+def deleteMoviesId(id):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"DELETE FROM Movies WHERE id = '{id}'"
+    cursor.execute(intruciones)
 
     conn.commit()
     conn.close()
+
+
+if __name__ == '__main__':
     
-    return datos
+    #print(MovieId(2))
+    #print(allMovies())
+    pass
