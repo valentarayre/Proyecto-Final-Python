@@ -2,7 +2,7 @@ import sqlite3 as sql
 
 baseDatos = './api/db/db.sqlite3'
 
-def formatData(data):
+def formatDataMovies(data):
     nameColums = ('id','title','sinopsis','image_url','id_director','id_genero')
     dataForm = {}
     cont = 0
@@ -18,6 +18,19 @@ def exists(params,table):
     cursor = conn.cursor()
 
     intruciones = f"SELECT * FROM '{table}' WHERE id = '{params}'"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
+    
+    conn.commit()
+    conn.close()
+    return datos != 0
+
+def existTitle(params):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"SELECT * FROM Movies WHERE title = '{params}'"
     cursor.execute(intruciones)
     datos = cursor.fetchall()
     
@@ -50,7 +63,7 @@ def MovieId(id):
     conn.close()
     
     if len(datos) != 0:        
-        return formatData(datos[0])
+        return formatDataMovies(datos[0])
     return False
 
 def allMovies():
@@ -67,9 +80,11 @@ def allMovies():
 
     listDatos = []
     for e in datos:
-        listDatos.append(formatData(e))
+        listDatos.append(formatDataMovies(e))
     
-    return listDatos
+    if len(listDatos) != 0:
+        return listDatos
+    return False
 
 def deleteMoviesId(id):
     global baseDatos
@@ -82,9 +97,25 @@ def deleteMoviesId(id):
     conn.commit()
     conn.close()
 
+def moviesFromGenero(idGenero):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"SELECT * FROM Movies WHERE id_genero = '{idGenero}'"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+    
+    listDatos = []
+    for e in datos:
+        listDatos.append(formatDataMovies(e))
+    
+    if len(listDatos) != 0:
+        return listDatos
+    return False
 
 if __name__ == '__main__':
-    
-    #print(MovieId(2))
-    #print(allMovies())
     pass

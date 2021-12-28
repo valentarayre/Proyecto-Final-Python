@@ -2,8 +2,8 @@ import sqlite3 as sql
 
 baseDatos = './api/db/db.sqlite3'
 
-def formatDataUsers(data):
-    nameColums = ('id','username','email','password')
+def formatDataComentarios(data):
+    nameColums = ('id','id_Movie','id_User','Date')
     dataForm = {}
     cont = 0
     
@@ -12,59 +12,24 @@ def formatDataUsers(data):
         cont += 1
     return dataForm
 
-def emailUnicode(email):
-    global baseDatos
-    conn = sql.connect(baseDatos)
-    cursor = conn.cursor()
-
-    intruciones = f"SELECT * FROM Users WHERE email='{email}'"
-    cursor.execute(intruciones)
-    datos = cursor.fetchall()    
-
-    conn.commit()
-    conn.close()
-    
-    return len(datos) == 0
-
-def newUser(username, email, password):
+def newComentario(id_Movie,id_User,Date):
     global baseDatos
     
     conn = sql.connect(baseDatos)
     cursor = conn.cursor()
     
-    intruciones = f"INSERT INTO Users VALUES (null, '{username}', '{email}', '{password}')"
+    intruciones = f"INSERT INTO Comentarios VALUES (null,'{id_Movie}','{id_User}','{Date}')"
     cursor.execute(intruciones)
-    
 
     conn.commit()
     conn.close()
 
-def allUsers():
+def ComentarioId(id):
     global baseDatos
     conn = sql.connect(baseDatos)
     cursor = conn.cursor()
 
-    intruciones = f"SELECT * FROM Users"    
-    cursor.execute(intruciones)
-    datos = cursor.fetchall()  
-
-    conn.commit()
-    conn.close()
-    
-    listDatos = []
-    for e in datos:
-        listDatos.append(formatDataUsers(e))
-    
-    if len(listDatos) != 0:
-        return listDatos
-    return False
-
-def UserId(id):
-    global baseDatos
-    conn = sql.connect(baseDatos)
-    cursor = conn.cursor()
-
-    intruciones = f"SELECT * FROM Users WHERE id = '{id}'"
+    intruciones = f"SELECT * FROM Comentarios WHERE id = '{id}'"
     cursor.execute(intruciones)
     datos = cursor.fetchall()
 
@@ -72,20 +37,59 @@ def UserId(id):
     conn.close()
     
     if len(datos) != 0:        
-        return formatDataUsers(datos[0])
+        return formatDataComentarios(datos[0])
     return False
 
-def deleteUser(id):
+def allComentarios():
     global baseDatos
     conn = sql.connect(baseDatos)
     cursor = conn.cursor()
 
-    intruciones = f"DELETE FROM Users WHERE id = '{id}'"
+    intruciones = f"SELECT * FROM Comentarios"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+    
+    listDatos = []
+    for e in datos:
+        listDatos.append(formatDataComentarios(e))
+    
+    if len(listDatos) != 0:
+        return listDatos
+    return False
+
+def deleteComentarioId(id):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"DELETE FROM Comentarios WHERE id = '{id}'"
     cursor.execute(intruciones)
 
     conn.commit()
     conn.close()
 
-if __name__ == "__main__":
-    print(allUsers())
+def allComentariosMovie(idMovie):
+    global baseDatos
+    conn = sql.connect(baseDatos)
+    cursor = conn.cursor()
+
+    intruciones = f"SELECT * FROM Comentarios WHERE id_Movie = '{idMovie}'"
+    cursor.execute(intruciones)
+    datos = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+    
+    listDatos = []
+    for e in datos:
+        listDatos.append(formatDataComentarios(e))
+    
+    if len(listDatos) != 0:
+        return listDatos
+    return False
+
+if __name__ == '__main__':
     pass
