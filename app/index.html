@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  links   -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="mainstylesheet.css">
+    
 </head>
 <body>
     <div id="app">
-        {{data}}        
-    </div>    
-    <script src="main.js"></script>
-    
+    <header>
+    <a href="#"><img src="/source/logo/final-logo.png" alt="Logo" id="logoMain"></a>
+        <ul class="nav-ul">
+            <li>
+                <a class="navStyle" href="#">Peliculas</a>
+            </li>
+            <li>
+                <a class="navStyle" href="#">Directores</a>
+            </li>
+            <a href="login.html"><button id="logBttn" onclick="">Iniciar sesión</button></a>
+        </ul>  
+        <img id="ToggleBttn" src="source/icons/hamburger.svg" @click="ToggleNav"alt="">  
+    </header>  
+
+    <div class="home">
+        <div class="mainPresentation">
+            <h1 id="textMain">Lorem ipsum dolor sit <br>
+                amet, consectetur.  
+             </h1>
+            <h5 id="textSecond">Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit. </h5>
+            <button id="registerBttn">Crea una cuenta</button>
+        </div>
+        <div class="searchContainer">
+            <div class="searchBox">
+            <input type="search" name="" id="mainSearcher" placeholder="   Buscar...">
+            <button id="searchBttn">Buscar</button>
+            </div> 
+        </div>
+
+        <div class="mainboxContainer">
+            
+        </div>
+
+    </div>
+
+    </div>
+    <!-- JS LINK -->
+    <script src="vue.js"></script>
+
+    <!-- APP Montaje -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
 </body>
-</html>
