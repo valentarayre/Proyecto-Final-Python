@@ -13,7 +13,7 @@ def createDB():
         conn = sql.connect(baseDatos)
         cursor = conn.cursor()
 
-        sql_file = open("./api/db/db-example.sqlite3.sql")
+        sql_file = open(baseDatos)
         sql_as_string = sql_file.read()
         cursor.executescript(sql_as_string)
 
