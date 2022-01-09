@@ -56,9 +56,10 @@
                 </ul> 
             </div>
             <div v-if="peliculas" class="datalistContainer">
+                
                 <div v-for="pelicula in Listpeliculas" class="objectExample">
                     <div class="imageObject">
-                        <img v-bind:src="pelicula.image" style="width: 100%;height: 100%;"> 
+                        <img v-bind:src="pelicula.image" style="width: 100%;height: 100%;border-radius: 5px;"> 
                     </div>
                     <div class="dataContainer">
                         <div class="titleObject">{{ pelicula.Nombre}} ({{ pelicula.Año  }})</div>

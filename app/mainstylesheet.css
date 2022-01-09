@@ -84,7 +84,7 @@ a{text-decoration: none;}
     background-color: #255762;
     background-image: url(source/desing/wallpaper1.png);
     background-size:cover;
-
+    background-position: center;
    
    animation-name: animate;
    animation-direction: alternate-reverse ;
@@ -163,7 +163,9 @@ a{text-decoration: none;}
 
 /*     Parte pelis     */ 
 
+/*spinner*/
 
+  
 
 .mainboxContainer{background-color: #0F4D57;
 width: 100%;
@@ -173,16 +175,19 @@ padding: 15px;
 }
 .filtersBox{margin: 15px;width: 12.5rem;height: fit-content;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762 ; font-size: 15px;}
+
 #filtersText{color: whitesmoke; display: flex; flex-direction: column;margin: 20px 0px 20px 20px }
 
-.datalistContainer{margin: 15px;width: 80%;height: 40rem;}
+.datalistContainer{margin: 5px;width: 80%;height: 40rem;}
+
 .filterItem{margin:10px 0px 0px 0px ;font-size: 12px;cursor: pointer}
+
 .filterItem:focus{color: #23C686;}
 
 
 .objectExample{width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: center;padding: 17.5px;color: whitesmoke;}
-.imageObject{width: 12%; height: 100%;background-color: #23C686;}
+.imageObject{min-width:120px; height: 100%;background-color: #23C686;}
 
 
 .dataContainer{width: 86.5%;height: 100%;margin: 0px 0px 0px 20px;display: flex;flex-direction: column;}
@@ -240,7 +245,7 @@ footer{height: 5rem;background-color:#0D2E33 ;}
 
     .mainboxContainer{height: 48rem; padding: 0px; margin: 0px;}
 
-    .filtersBox{margin: 2px 0px 0px 0px;width:8rem;}
+    .filtersBox{width:8rem;}
     #filtersText{font-size: 10px; }
     .filterItem{font-size: 9px;}
 
@@ -248,14 +253,26 @@ footer{height: 5rem;background-color:#0D2E33 ;}
 
 
 
-    .objectExample{width: 100%;height: 18%;background-color: #1D3B41;border-radius: 15px;
-    border: solid 3px #255762;margin: 0px 0px 15px 0px;display: flex;align-items: center;padding: 10px;color: whitesmoke;}
-    .imageObject{width: 10%;background-color: #23C686;}
-    img.filmImg{ width: 100%;height: 100%;object-fit: cover; display: none;}
+    .objectExample{width: 95%;height: 18%;background-color: #1D3B41;border-radius: 15px;
+    border: solid 3px #255762;margin: 0px 20px 15px 0px;display: flex;align-items: center;padding: 10px;color: whitesmoke;}
+    .imageObject{min-width: 80px;background-color: #23C686;}
+    
 
     .titleObject{width: 100%;height: 4rem; padding-top: 5px; font-size: 11px;}
     .durationObject{width: 100%;height: 2rem;font-weight:400;font-size: 10px;color: #a1a0a0;margin-top: -40px;}
     .sinopsisObject{display: none;}
     .analiticsObject{width: 100%;height: 15%;font-size: 10px; padding-top: 1rem;}
 
+}
+@media only screen and (max-width: 400px) {
+    .mainPresentation{background-position-x: center;}  
+    .filtersBox{margin: 10px 10px 10px 25px;border: solid 3px #255762 ; font-size: 15px;}
+    .objectExample{width: 8rem;height: 9rem;margin: 0px auto 10px auto;display: flex;align-items: center;padding: 10px;color: whitesmoke;flex-direction: column; text-align: center;}
+    .imageObject{ height: 80%;background-color: #23C686;}
+    .dataContainer{width: 100%;height: 10%;margin: 0px 0px 0px 5px;display: flex;flex-direction: column;}
+    .titleObject{width: 100%;height: 20%;font-size: 10px;}
+    .durationObject{width: 100%;height: 20%;font-weight:400;font-size: 10px;color: #a1a0a0;display: none;}
+    .sinopsisObject{width: 100%; height: 80%;text-align: left;padding-top: 5px;font-size: 15px;}
+    .analiticsObject{width: 100%;height: 15%;display: none;}
+    .mainboxContainer{height: 55rem;}
 }
