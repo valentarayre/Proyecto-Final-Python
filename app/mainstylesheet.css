@@ -82,7 +82,7 @@ a{text-decoration: none;}
 .mainPresentation{
     height: 420px;
     background-color: #255762;
-    background-image: url(source/desing/wallpaper1.png);
+    background-image: url(./source/desing/wallpaper1.png);
     background-size:cover;
     background-position: center;
    
@@ -95,9 +95,9 @@ a{text-decoration: none;}
    animation-timing-function: ease-in-out;
 }
 @keyframes animate{
-50%{background-image: url(/source/desing/wallpaper2.png);}
+50%{background-image: url(./source/desing/wallpaper2.png);}
 
-100%{background-image: url(/source/desing/wallpaper4.png);}
+100%{background-image: url(./source/desing/wallpaper4.png);}
 }
 
 #textMain{font-weight:900;padding-top: 110px;padding-left: 60px; font-size: 35px;}
@@ -187,7 +187,7 @@ border: solid 3px #255762 ; font-size: 15px;}
 
 .objectExample{width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: center;padding: 17.5px;color: whitesmoke;}
-.imageObject{min-width:120px; height: 100%;background-color: #23C686;}
+.imageObject{min-width:120px; height: 100%;}
 
 
 .dataContainer{width: 86.5%;height: 100%;margin: 0px 0px 0px 20px;display: flex;flex-direction: column;}
