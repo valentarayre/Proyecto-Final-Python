@@ -1,7 +1,7 @@
-import sqlite3 as sql
+import sqlite3
 from pathlib import Path
 
-baseDatos = './api/db/db.sqlite3'
+baseDatos = './db/db.sqlite3'
 
 
 def createDB():
@@ -10,10 +10,10 @@ def createDB():
     if not database.is_file():
         generos = ["Acción","Aventuras","Comedia","Documental","Drama","Fantasía","Musical","Suspense","Terror"]
         
-        conn = sql.connect(baseDatos)
+        conn = sqlite3.connect(baseDatos)
         cursor = conn.cursor()
 
-        sql_file = open(baseDatos)
+        sql_file = open('./db/db-example.sqlite3.sql')
         sql_as_string = sql_file.read()
         cursor.executescript(sql_as_string)
 
