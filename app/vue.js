@@ -73,14 +73,14 @@ const app = Vue.createApp({
             Likes: 44,
           }
         ],
-        listapeliculasVisibles:[],
+        
+
         directores: false,
+
         }
         },
-        beforeMount: function(){
-          this.actualizarlistapeliculasVisibles()
-        },
         methods:{
+
         directorView(){
           console.log("Directores");
           this.directores = true;
@@ -104,15 +104,8 @@ const app = Vue.createApp({
           document.querySelector('.nav-ul').classList.toggle('show');
           console.log("a")
         },
-        actualizarPagina(numeroPagina){
-          this.paginaActual = numeroPagina
-          this.actualizarlistapeliculasVisibles()
-        }
-        ,
-        actualizarlistapeliculasVisibles(){
-          this.listapeliculasVisibles = this.Listpeliculas.slice(this.paginaActual * this.peliculasPorPagina,(this.paginaActual * this.peliculasPorPagina) + this.peliculasPorPagina)
-
-          
+        Test(){
+          console.log("a")
         }
 
 },
