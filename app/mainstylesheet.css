@@ -5,6 +5,18 @@
     padding: 0;
     box-sizing:border-box;
     font-family: 'Roboto', sans-serif;
+    
+}
+
+.btn-primary{background-color: #23C686 !important;
+    border-color: #f8f8f8}
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 0 0 .2rem #23C686
+}
+.btn-primary:hover {
+    
+    border-color: #1D3B41
 }
 header
 {   
@@ -26,8 +38,12 @@ header
 ul li{
     display: inline;
     margin: 1rem;
+    
+    
 }
+ul{padding-top: 17.5px;}
 a{text-decoration: none;}
+a:hover{color: #23C686 !important;}
 .navStyle{
     position: relative;
     letter-spacing: 0.5px;
@@ -176,7 +192,7 @@ padding: 15px;
 .filtersBox{margin: 15px;width: 12.5rem;height: fit-content;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762 ; font-size: 15px;}
 
-#filtersText{color: whitesmoke; display: flex; flex-direction: column;margin: 20px 0px 20px 20px }
+#filtersText{color: whitesmoke; display: flex; flex-direction: column;margin: 20px 0px 20px 0px }
 
 .datalistContainer{margin: 5px;width: 80%;height: 40rem;}
 
@@ -187,13 +203,13 @@ border: solid 3px #255762 ; font-size: 15px;}
 
 .objectExample{width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: center;padding: 17.5px;color: whitesmoke;}
-.imageObject{min-width:120px; height: 100%;}
+.imageObject{min-width:120px; height: 100%;background-color: transparent;}
 
 
 .dataContainer{width: 86.5%;height: 100%;margin: 0px 0px 0px 20px;display: flex;flex-direction: column;}
 .titleObject{width: 100%;height: 20%;font-size: 18px;}
 .durationObject{width: 100%;height: 20%;font-weight:400;font-size: 14px;color: #a1a0a0}
-.sinopsisObject{width: 100%; height: 80%;text-align: left;padding-top: 5px;font-size: 15px;}
+.sinopsisObject{width: 100%; height: 80%;text-align: left;padding-top: 5px;font-size: 15px;overflow: hidden; text-overflow: ellipsis;}
 .analiticsObject{width: 100%;height: 15%;}
 
 
@@ -226,7 +242,7 @@ footer{height: 5rem;background-color:#0D2E33 ;}
 
     .nav-ul.show{margin:0;z-index: 999;width:100%;display:flex;flex-direction: column;position: absolute;top: 54px; padding-left: 8px;background-color: #1D3B41;}
 
-    #ToggleBttn{display: block;z-index: 9999;}
+    #ToggleBttn{display: block;z-index: 1050;}
     ul{margin: 0.05rem;}
 
     .mainPresentation{height: 17rem;background-size: 768px; background-repeat: no-repeat;}
@@ -246,7 +262,7 @@ footer{height: 5rem;background-color:#0D2E33 ;}
     .mainboxContainer{height: 48rem; padding: 0px; margin: 0px;}
 
     .filtersBox{width:8rem;}
-    #filtersText{font-size: 10px; }
+    #filtersText{font-size: 10px; margin-left:-10px; }
     .filterItem{font-size: 9px;}
 
 
