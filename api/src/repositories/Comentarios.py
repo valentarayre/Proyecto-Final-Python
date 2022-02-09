@@ -1,6 +1,7 @@
 import sqlite3 as sql
+from ..config import *
 
-baseDatos = './api/db/db.sqlite3'
+baseDatos = ubicacionDB
 
 def formatDataComentarios(data):
     nameColums = ('id','id_Movie','id_User','Date')
