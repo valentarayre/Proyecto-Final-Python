@@ -13,3 +13,9 @@
 
 ## Mas informacion de env para distintos dispositovos
 https://docs.python.org/3/tutorial/venv.html
+
+## Usuarios ya creados
+User "correo1@gmail.com" Password "12345"
+User "correo2@gmail.com" Password "12345"
+User "correo3@gmail.com" Password "12345"
+User "correo4@gmail.com" Password "12345"
