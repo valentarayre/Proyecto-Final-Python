@@ -7,10 +7,12 @@
     font-family: 'Roboto', sans-serif;
     
 }
+
 /* SCROLL BAR */
 ::-webkit-scrollbar{width: 0.65em}
 ::-webkit-scrollbar-thumb {background: #23C686;border-radius: 15px;}
 ::-webkit-scrollbar-track {background: #282B2C;}
+
 .btn-primary{background-color: #23C686 !important;
     border-color: #f8f8f8}
 .btn-primary:focus,
@@ -48,10 +50,12 @@ ul li{
 }
 ul{padding-top: 17.5px;}
 
+
 a{text-decoration: none;
 color: inherit !important; /* blue colors for links too */
 text-decoration: inherit; /* no underline */
 }
+
 
 
 
