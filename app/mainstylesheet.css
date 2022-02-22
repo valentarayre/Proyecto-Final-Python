@@ -15,8 +15,7 @@
 
 .btn-primary{background-color: #23C686 !important;
     border-color: #f8f8f8}
-.btn-primary:focus,
-.btn-primary.focus {
+.btn-primary:focus,.btn-primary.focus {
     box-shadow: 0 0 0 .2rem #23C686
 }
 .btn-primary:hover {
@@ -200,23 +199,23 @@ text-decoration: inherit; /* no underline */
 
 .mainboxContainer{background-color: #0F4D57;
 width: 100%;
-height: 70rem;
+height: auto;
 display: flex;
 padding: 15px;
 }
 .filtersBox{margin: 15px;width: 12.5rem;height: fit-content;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762 ; font-size: 15px;}
 
-#filtersText{color: whitesmoke; display: flex; flex-direction: column;margin: 20px 0px 20px 0px }
+#filtersText{color: whitesmoke; display: flex; flex-direction: column;margin: 0px 0px 20px 0px }
 
-.datalistContainer{margin: 5px;width: 80%;height: 40rem;}
+.datalistContainer{margin: 5px;width: 80%;height: auto;max-height: 105rem;}
 
 .filterItem{margin:10px 0px 0px 0px ;font-size: 12px;cursor: pointer; width: fit-content;}
 
 .filterItem:focus{color: #23C686;}
 
 
-.objectExample{cursor: pointer;width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
+.objectExample{cursor: pointer;width: 100%;height: 13rem;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: center;padding: 17.5px;color: whitesmoke;}
 .imageObject{min-width:120px; height: 100%;background-color: transparent;}
 
@@ -229,23 +228,29 @@ border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: ce
 
 
 
-.btnsListnav{position: absolute;right: 2rem;margin-top: -4.5rem;}
+.btnsListnav{background-color:#0F4D57;display:flex;height: auto;padding: 20px 0 20px 0;}
+.btnsList{margin-left: auto;margin-right: 40px;}
+
+.addPeliculaBttn{font-size: small;color: #23C686;background-color: transparent; border: solid 1.5px #23C686;border-radius: 15px;padding: 5px; margin: 10px auto 0 0;}
+.addBttn{height: 19px;}
+
 /*     Parte directores    */ 
 
-.datadirectorContainer{width: 5em; height: 10em;background-color: #1D3B41;}
-
+.mainDirectorContainer{padding-top:0.5rem;}
+.datadirectorContainer{display: flex;flex-wrap: wrap;width: 100vw;padding: 0 13% 0 13%;}
+.objectDirector{margin: 25px auto 25px auto;padding-top: 20px;text-align:center;width: 10.5em; height: 12em;background-color: #1D3B41;border-radius: 15px;border: solid 3px #255762}
+.imageDirector{width:60%;}
 
 
 
 
 #anteriorBttn , #siguienteBttn {color: #23C686 ; background-color: transparent;height: 35px;width: 70px; border: solid 1.5px #23C686;}
-#anteriorBttn{border-bottom-left-radius:15px; border-top-left-radius: 15px  ;}
-#siguienteBttn{border-bottom-right-radius:15px; border-top-right-radius: 15px  ;}
+#anteriorBttn{font-size: small;border-bottom-left-radius:15px; border-top-left-radius: 15px  ;}
+#siguienteBttn{font-size: small;border-bottom-right-radius:15px; border-top-right-radius: 15px  ;}
 footer{height: 5rem;background-color:#0D2E33 ;}
 
 
 .mainContainer{width: 80%;height: 80%;}
-
 
 
 
@@ -317,7 +322,7 @@ footer{height: 5rem;background-color:#0D2E33 ;}
 
 
 
-    .mainboxContainer{height: 48rem; padding: 0px; margin: 0px;}
+    .mainboxContainer{height: auto; padding: 0px; margin: 0px;}
 
     .filtersBox{width:8rem;}
     #filtersText{font-size: 10px; margin-left:-10px; }
@@ -327,7 +332,7 @@ footer{height: 5rem;background-color:#0D2E33 ;}
 
 
 
-    .objectExample{width: 95%;height: 18%;background-color: #1D3B41;border-radius: 15px;
+    .objectExample{width: 95%;height: 9rem;background-color: #1D3B41;border-radius: 15px;
     border: solid 3px #255762;margin: 0px 20px 15px 0px;display: flex;align-items: center;padding: 10px;color: whitesmoke;}
     .imageObject{min-width: 80px;background-color: #23C686;}
     
@@ -352,6 +357,12 @@ footer{height: 5rem;background-color:#0D2E33 ;}
     #userCommentInput{width: 64.7%;}
     #closeBttn{height:25px; right: 22px;top: 20px;}
 
+    .addPeliculaBttn{font-size: 9px;padding: 3px ; margin: 10px auto 0 auto;}
+    .addBttn{height: 15px;}
+
+    /*     Parte directores    */ 
+    .objectDirector{margin: 10px auto 10px auto;width: 8.5em; height: 10em;background-color: #1D3B41;border-radius: 15px;border: solid 3px #255762}
+
 }
 @media only screen and (max-width: 400px) {
     .mainPresentation{background-position-x: center;}  
@@ -363,10 +374,11 @@ footer{height: 5rem;background-color:#0D2E33 ;}
     .durationObject{width: 100%;height: 20%;font-weight:400;font-size: 10px;color: #a1a0a0;display: none;}
     .sinopsisObject{width: 100%; height: 80%;text-align: left;padding-top: 5px;font-size: 15px;}
     .analiticsObject{width: 100%;height: 15%;display: none;}
-    .mainboxContainer{height: 55rem;}
+    
     .mainContainer{height: 80%;}
     #userCommentInput{width: 60%;}
-
+    .addPeliculaBttn{font-size: 9px;padding: 3px ; margin: 10px 0 0 0;}
+    .addBttn{height: 12px;}
 }
 
 @media only screen and (max-width: 280px) {.photoContainer{margin-top: 15px;width: 93px;height: 132px;}

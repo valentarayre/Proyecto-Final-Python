@@ -92,14 +92,14 @@
 
         <div class="mainboxContainer">
             <!--  MODO PELICULAS    -->
-            <div v-if="peliculas" class="filtersBox">
+            <div  v-if="peliculas" class="filtersBox">
                
                    
                  
                 <ul id="filtersText">
                     Generos:
                     <li v-for="genero in generosPeliculas" class="filterItem" tabindex="1" >{{ genero }}</li>
-
+                    <button class="addPeliculaBttn" >Agregar pelicula <img class="addBttn"src="./source/icons/math-plus.svg" alt=""></button>
                 </ul> 
                 
             </div>
@@ -126,19 +126,61 @@
 
 
             <!--  MODO DIRECTORES    -->
+            
                 <div v-if="directores" class="datadirectorContainer">
                     <div class="objectDirector">
-                        <img src="" alt="">
-                        <p>Polanski</p>
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
                     </div>
                     <div class="objectDirector">
-                        <img src="" alt="">
-                        <p></p>
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
                     </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                    <div class="objectDirector">
+                        <img class="imageDirector" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Roman_Polanski_Cannes_2013.jpg" alt="">
+                        <p class="nameDirector">Polanski</p>
+                    </div>
+                   
+                   
+
                 </div>
+            </div>
               
         </div>
-        <div class="btnsListnav"><button class="pagBttn" id="anteriorBttn">Anterior</button><button id="siguienteBttn">Siguiente</button></div>
+        <div class="btnsListnav">
+            <div class="btnsList">
+                <button class="pagBttn" id="anteriorBttn">Anterior</button>
+                <button id="siguienteBttn">Siguiente</button>
+            </div>
+        </div>
         <footer></footer>
 
     </div>
