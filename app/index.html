@@ -31,8 +31,23 @@
         <img id="ToggleBttn" src="source/icons/hamburger.svg" @click="ToggleNav"alt="">  
     </header>  
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+
+          <div class="modal-content bg-dark text-white shadow-1-strong">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body  border-0 ">
+              <label for="text" class="form-label">Usuario</label>
+              <input type="text" class="form-control" name="" id="">
+              <br>
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
@@ -76,7 +91,7 @@
 
 
         <div class="mainboxContainer">
-            
+            <!--  MODO PELICULAS    -->
             <div v-if="peliculas" class="filtersBox">
                
                    
@@ -98,23 +113,23 @@
                     
                     </div>
                     <div class="dataContainer">
-                        <div class="titleObject">{{ pelicula.Nombre}} ({{ pelicula.Año  }})</div>
+                        <a href="film.html">
+                        <div class="titleObject">{{ pelicula.Nombre }} ({{ pelicula.Año  }})</div>
                         <div class="durationObject">{{ pelicula.Duracion }} · {{ pelicula.Erate}} </div>
                         <div class="sinopsisObject"> {{ pelicula.Info }}</div>
                         <div class="analiticsObject">Likes: {{pelicula.Likes}}  Comentarios: {{ pelicula.Comentarios }}</div>
-                    </div>
+                      </a>
+                      </div>
                 </div>
             
-            </div>
+              </div>
 
 
-
-
-
+            <!--  MODO DIRECTORES    -->
                 <div v-if="directores" class="datadirectorContainer">
                     <div class="objectDirector">
                         <img src="" alt="">
-                        <p></p>
+                        <p>Polanski</p>
                     </div>
                     <div class="objectDirector">
                         <img src="" alt="">

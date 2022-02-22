@@ -8,6 +8,11 @@
     
 }
 
+/* SCROLL BAR */
+::-webkit-scrollbar{width: 0.65em}
+::-webkit-scrollbar-thumb {background: #23C686;border-radius: 15px;}
+::-webkit-scrollbar-track {background: #282B2C;}
+
 .btn-primary{background-color: #23C686 !important;
     border-color: #f8f8f8}
 .btn-primary:focus,
@@ -18,6 +23,8 @@
     
     border-color: #1D3B41
 }
+
+/* HEADER */
 header
 {   
     background-color: #1D3B41;
@@ -42,13 +49,21 @@ ul li{
     
 }
 ul{padding-top: 17.5px;}
-a{text-decoration: none;}
-a:hover{color: #23C686 !important;}
+
+
+a{text-decoration: none;
+color: inherit !important; /* blue colors for links too */
+text-decoration: inherit; /* no underline */
+}
+
+
+
+
 .navStyle{
     position: relative;
     letter-spacing: 0.5px;
     text-decoration: none;
-    color: #23C686;
+    color: #23C686 !important;
     font-weight: 300;
     font-size: 15px;
 }
@@ -181,7 +196,7 @@ a:hover{color: #23C686 !important;}
 
 /*spinner*/
 
-  
+
 
 .mainboxContainer{background-color: #0F4D57;
 width: 100%;
@@ -196,12 +211,12 @@ border: solid 3px #255762 ; font-size: 15px;}
 
 .datalistContainer{margin: 5px;width: 80%;height: 40rem;}
 
-.filterItem{margin:10px 0px 0px 0px ;font-size: 12px;cursor: pointer}
+.filterItem{margin:10px 0px 0px 0px ;font-size: 12px;cursor: pointer; width: fit-content;}
 
 .filterItem:focus{color: #23C686;}
 
 
-.objectExample{width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
+.objectExample{cursor: pointer;width: 100%;height: 30%;background-color: #1D3B41;border-radius: 15px;
 border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: center;padding: 17.5px;color: whitesmoke;}
 .imageObject{min-width:120px; height: 100%;background-color: transparent;}
 
@@ -214,10 +229,14 @@ border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: ce
 
 
 
-
-
-
 .btnsListnav{position: absolute;right: 2rem;margin-top: -4.5rem;}
+/*     Parte directores    */ 
+
+.datadirectorContainer{width: 5em; height: 10em;background-color: #1D3B41;}
+
+
+
+
 
 #anteriorBttn , #siguienteBttn {color: #23C686 ; background-color: transparent;height: 35px;width: 70px; border: solid 1.5px #23C686;}
 #anteriorBttn{border-bottom-left-radius:15px; border-top-left-radius: 15px  ;}
@@ -225,11 +244,50 @@ border: solid 3px #255762;margin: 0px 0px 10px 0px;display: flex;align-items: ce
 footer{height: 5rem;background-color:#0D2E33 ;}
 
 
+.mainContainer{width: 80%;height: 80%;}
 
 
 
 
+            /*     Pagina film    */ 
 
+/*      film    */
+.mainBase{width: 100vw;background-color: #0D2E33;height: 100vh;display: flex;font-family: 'Roboto', sans-serif}
+.mainContainer{
+    width: 45rem;
+    height: 90%;
+    max-height: 780px;
+    border-radius: 15px;
+    background-color: #282B2C;
+    margin: auto;
+    position: relative;
+}
+#closeBttn{position: absolute;height:30px; right: 30px;top: 20px;}
+.filmMainContainer{
+    min-width: 80%;
+    max-width: 15rem;
+    margin: 1.5rem auto 0 auto;
+    display: flex;
+}
+.filmDataContainer{height: 198px;width: 80%;padding: 0 0 0 1rem;color: white;display: flex; max-height: 198px;flex-direction: column;}
+.filmTitle{font-size: larger;font-weight: 500;}
+.photoContainer{width: 140px;height: 198px; background-image: url(https://www.impactohd.cl/48096/dvd-supercool-edicion-sin-censura-extendida.jpg);background-size: cover;background-repeat: no-repeat; }
+.filmDataText{padding-top: 1rem;font-weight: 400;font-size: 14px;overflow:auto;height: 198px;}
+
+.filmDirectorData{margin-top: 1rem;align-items: flex-end;}
+
+/*    comentarios   */ 
+.commentMainContainer{
+    max-width: 90%;
+    height:55%;
+    border-radius: 7px;
+    margin: 5% auto auto auto;
+    padding: 1.5rem;}
+.commentInputContainer{margin-top: -25px;width: 100%;}
+.commentBox{margin-top: 10px;background-color: #424242;width: 100%; height: 3.5rem;border-radius: 10px; color: rgb(255, 255, 255);padding: 10px;}
+.commentListContainer{margin-top:1rem;overflow: auto;height: 90%;padding: 0.5rem 0px 0.5rem 0px;}
+#userCommentInput{color:white;width: 80%;background-color: transparent;outline: 0;border-width: 0 0 2px;}
+.commentBttn{margin-left: 0.5em;width: 6em;height:2em;background-color: transparent;color: #23C686;box-shadow: none;border: solid 2px #23C686;border-radius: 5px;}
 /*     media Querys     */ 
 
 @media only screen and (max-width: 768px) {
@@ -279,6 +337,21 @@ footer{height: 5rem;background-color:#0D2E33 ;}
     .sinopsisObject{display: none;}
     .analiticsObject{width: 100%;height: 15%;font-size: 10px; padding-top: 1rem;}
 
+
+
+
+    .filmDataContainer{width: 55%;}
+    .filmDirectorData, .filmDataText {font-size: 12px;}
+    .mainContainer{
+        width: 90%;
+        max-height: 650px;
+        border-radius: 15px;
+        background-color: #282B2C;
+        margin: auto;
+    }
+    #userCommentInput{width: 64.7%;}
+    #closeBttn{height:25px; right: 22px;top: 20px;}
+
 }
 @media only screen and (max-width: 400px) {
     .mainPresentation{background-position-x: center;}  
@@ -291,4 +364,14 @@ footer{height: 5rem;background-color:#0D2E33 ;}
     .sinopsisObject{width: 100%; height: 80%;text-align: left;padding-top: 5px;font-size: 15px;}
     .analiticsObject{width: 100%;height: 15%;display: none;}
     .mainboxContainer{height: 55rem;}
+    .mainContainer{height: 80%;}
+    #userCommentInput{width: 60%;}
+
 }
+
+@media only screen and (max-width: 280px) {.photoContainer{margin-top: 15px;width: 93px;height: 132px;}
+#closeBttn{
+    height: 20px;
+    right: 15px;
+    top: 15px;}
+.commentMainContainer{padding: 1rem 0px 0px 0px;}}
