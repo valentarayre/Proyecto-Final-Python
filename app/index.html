@@ -32,40 +32,27 @@
     </header>  
 
 
-          <div class="modal-content bg-dark text-white shadow-1-strong">
-            <div class="modal-header border-0">
-              <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white shadow-1-strong">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body  border-0 ">
+                    <label for="text" class="form-label">Correo</label>
+                    <input type="text" class="form-control" name="" id="correoUser">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="passwordUser">
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+                </div>
             </div>
-            <div class="modal-body  border-0 ">
-              <label for="text" class="form-label">Usuario</label>
-              <input type="text" class="form-control" name="" id="">
-              <br>
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control">
-            </div>
-            <div class="modal-footer border-0">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Iniciar Sesion</button>
-
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <label for="text" class="form-label">Usuario</label>
-              <input type="text" class="form-control" name="" id="">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 
 
@@ -189,6 +176,8 @@
     <!-- JS LINK -->
     <script src="vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="loginUser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- APP Montaje -->
     <script>
