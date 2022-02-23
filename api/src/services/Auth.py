@@ -4,14 +4,11 @@ from ..repositories.Users import *
 from ..config import secretJWT
 
 
-def AuthUser(user):
-    email = user["email"]
-    password = user["password"]
-    
-    UserFound = findUserByData(email,password)
+def AuthUser(email, password):
+
+    UserFound = findUserByData(email, password)
     if len(UserFound) == 0:
         return False
     UserData = UserFound[0]
     expiredTime = datetime.now(tz=timezone.utc) + timedelta(hours=6)
-
     return jwt.encode({"id": UserData[0], "exp": expiredTime}, secretJWT, algorithm="HS256")

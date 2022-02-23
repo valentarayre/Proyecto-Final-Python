@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS "Movies" (
 	"title"	VARCHAR(255) NOT NULL,
 	"sinopsis"	TEXT NOT NULL,
 	"image_url"	VARCHAR(255) NOT NULL,
+	"year"	INTEGER NOT NULL,
 	"id_director"	INTEGER NOT NULL,
 	"id_genero"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT),

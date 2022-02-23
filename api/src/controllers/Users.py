@@ -1,24 +1,29 @@
+import imp
+from types import NoneType
 from flask import jsonify, request
 from http import HTTPStatus
 from ..services.Auth import *
+import jwt
+from ..config import *
 
 def auth():
-    user = request.get_json()
-    if not (("email" in user) and ("password" in user)):
+    try:
+        userData = request.get_json()
+        User = AuthUser(userData["email"],userData["password"])
+        if User:
+            return jsonify({"token": User}), HTTPStatus.OK
+        return jsonify({"msg":"Contraseña o Correo incorrecto"}), HTTPStatus.BAD_REQUEST
+    except:
         return jsonify({"msg":"Falta Parametros"}), HTTPStatus.BAD_REQUEST
-    User = AuthUser(user)
-    if User:
-        return jsonify({"token": User}), HTTPStatus.OK
-    return jsonify({"msg":"Contraseña o Correo incorrecto"}), HTTPStatus.BAD_REQUEST
+        
 
-""" def post_Users():
-
-    user = request.get_json()
-    #username, email, password        
+def ValidToken():
+    try:
+        encoded_token = request.get_json()
+        decode_token = jwt.decode(encoded_token["token"], secretJWT, algorithms=['HS256'])
+        return jsonify({"msg": "Es valido"}), HTTPStatus.OK
+    except jwt.ExpiredSignatureError:
+        return jsonify({"msg": "Paso mucho tiempo"}), HTTPStatus.NOT_ACCEPTABLE
+    except jwt.InvalidTokenError:
+        return jsonify({"msg": "Token no valido"}), HTTPStatus.BAD_REQUEST
     
-    if ("username" in user) and ("email" in user) and ("password" in user):
-        if emailUnicode(user["email"]):
-            newUser(user["username"],user["email"],user["password"])
-            return jsonify({"message":"User Creado"}), HTTPStatus.OK
-        return jsonify({"message":"Email ya esta regristado"}), HTTPStatus.BAD_REQUEST
-    return jsonify({"message":"Error Falta parametros"}), HTTPStatus.BAD_REQUEST """
