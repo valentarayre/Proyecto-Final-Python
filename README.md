@@ -9,6 +9,7 @@
 - Intalacion de los requisitos
     > pip install -r requirements.txt
 - Ahora puedes hacer
+    -Desde la ruta principal, si ejecutas dentro de api, va a ver un error, para buscar la base de datos
     > python main.py
 
 ## Mas informacion de env para distintos dispositovos
