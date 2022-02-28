@@ -1,0 +1,83 @@
+
+ListToDirectores = [
+    "Ruben Fleischer",
+    "Christopher Nolan",
+    "Seth MacFarlane",
+    "Peter Mortimer",
+    "Robert Zemeckis",
+    "Jason Reitman",
+    "Thomas Kail",
+    "David Robert Mitchell",
+    "Tobe Hooper",
+    "Wes Craven",
+    "John McTiernan",
+    "Frank Darabont",
+    "Adam McKay",
+    "J.A. Bayona"
+]
+
+ListToGenero = [
+    "Acción",
+    "Aventuras",
+    "Comedia",
+    "Documental",
+    "Drama",
+    "Fantasía",
+    "Musical",
+    "Suspense",
+    "Terror"
+]
+
+ListToUser = [
+    ["User 1", "correo1@gmail.com", "12345"],
+    ["User 2", "correo2@gmail.com", "12345"],
+    ["User 3", "correo3@gmail.com", "12345"],
+    ["User 4", "correo4@gmail.com", "12345"]
+]
+
+ListToMovies = [
+    ["Uncharted",   "Una precuela de la saga de videojuegos Uncharted, donde descubrimos cómo Drake llego a conocer y hacerse amigo de Sully.",
+     "https://m.media-amazon.com/images/M/MV5BOTNkN2ZmMzItOTAwMy00MmM5LTg5YTgtNmE5MThkMDE2ODJiXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg",
+     "2022", "1", "1", "1"],
+    ["El Caballero Oscuro", "Cuando la amenaza conocida como el Joker causa estragos y el caos en Gotham City, Batman debe aceptar una de las mayores pruebas psicológicas y físicas para luchar contra la injusticia.",
+     "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+     "2008", "2", "1", "2"],
+    ["Interestelar", "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.",
+     "https://m.media-amazon.com/images/I/81kz06oSUeL._AC_SL1500_.jpg",
+     "2014", "2", "2", "4"],
+    ["Ted", "John Bennett, un hombre cuyo deseo de la infancia de dar vida a su oso de peluche se hizo realidad, ahora debe decidir entre mantener la relación con el oso, Ted, o su novia, Lori.",
+     "https://m.media-amazon.com/images/M/MV5BMTQ1OTU0ODcxMV5BMl5BanBnXkFtZTcwOTMxNTUwOA@@._V1_FMjpg_UX1000_.jpg",
+     "2012", "3", "3", "3"],
+    ["El Alpinista", "Marc-André Leclerc sube solo, lejos del foco de atención. El joven de 23 años realiza algunos de los ascensos en solitario más audaces de la historia. Sin cámaras, sin margen de error, su enfoque es la esencia de la aventura en solitario.",
+     "https://m.media-amazon.com/images/M/MV5BOWY1NTBmOTQtYzgxMi00NjU0LTliNGEtNmUwNmQzZGVjNzhkXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg",
+     "2021", "4", "4", "4"],
+    ["Forrest Gump", "Las presidencias de Kennedy y Johnson, los acontecimientos de Vietnam, el Watergate y otros eventos históricos se desarrollan a través de la perspectiva de un hombre de Alabama con un coeficiente intelectual de 75.",
+     "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+     "2012", "5", "5", "2"],
+    ["Cazafantasmas", "Trama no desvelada.",
+     "https://m.media-amazon.com/images/M/MV5BMmZiMjdlN2UtYzdiZS00YjgxLTgyZGMtYzE4ZGU5NTlkNjhhXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+     "2021", "6", "6", "4"],
+    ["Hamilton", "La historia de uno de los padres fundadores de los Estados Unidos y primer Secretario del Tesoro, Alexander Hamilton, rodada en directo en Broadway con el reparto original.",
+     "https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_.jpg",
+     "2020", "7", "7", "1"],
+    ["It Follows", "Una joven es perseguida por una fuerza sobrenatural tras un encuentro sexual.",
+     "https://m.media-amazon.com/images/M/MV5BMmU0MjBlYzYtZWY0MC00MjliLWI3ZmUtMzhlZDVjMWVmYWY4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+     "2014", "8", "8", "4"],
+    ["La matanza de Texas", "Cinco amigos se dirigen a una zona rural de Texas para visitar la tumba de un abuelo. En el camino se topan con lo que parece ser una casa abandonada, solo para descubrir algo siniestro dentro. Algo armado con una motosierra.",
+     "https://m.media-amazon.com/images/M/MV5BMTU1MzY2NDc2MV5BMl5BanBnXkFtZTgwMTc3MTUzMzI@._V1_.jpg",
+     "1974", "9", "9", "4"],
+    ["Scream", "Un año después del asesinato de su madre, una adolescente es aterrorizada por un nuevo asesino, que tiene como objetivo a la chica y a sus amigos utilizando las películas de terror como parte de un juego mortal.",
+     "https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_FMjpg_UX1000_.jpg",
+     "1996", "10", "9", "3"],
+    ["Depredador", "Un equipo de comandos en una misión en la selva centroamericana es perseguido por un guerrero extraterrestre.",
+     "https://m.media-amazon.com/images/M/MV5BY2QwYmFmZTEtNzY2Mi00ZWMyLWEwY2YtMGIyNGZjMWExOWEyXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_FMjpg_UX1000_.jpg", "1987", "11", "1", "1"],
+    ["La niebla", "Una extraña tormenta parece traer consigo a unas criaturas sedientas de sangre a una pequeña ciudad, donde un limitado grupo de ciudadanos se hace fuerte en el supermercado para intentar sobrevivir.",
+     "https://m.media-amazon.com/images/M/MV5BMTU2NjQyNDY1Ml5BMl5BanBnXkFtZTcwMTk1MDU1MQ@@._V1_FMjpg_UX1000_.jpg",
+     "2007", "12", "8", "4"],
+    ["No miren arriba", "Narra la historia de dos astrónomos mediocres que deben emprender una gira mediática descomunal para avisar a la humanidad de la llegada de un cometa que va a destruir la Tierra.",
+     "https://m.media-amazon.com/images/M/MV5BNjZjNDE1NTYtYTgwZS00M2VmLWEyODktM2FlNjhiYTk3OGU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+     "2021", "13", "3", "1"],
+    ["El orfanato", "Una mujer regresa con su familia al hogar de su infancia, que solía ser un orfanato para niños discapacitados. Al poco tiempo, su hijo comienza a comunicarse con un nuevo amigo invisible.",
+     "https://m.media-amazon.com/images/M/MV5BYzFlOWZmYzctYTkwMi00MjIxLWIxNjYtYTcwOGJlNDFhMjE0XkEyXkFqcGdeQXVyMjgyNjk3MzE@._V1_FMjpg_UX1000_.jpg",
+     "2007", "14", "8", "4"],
+]

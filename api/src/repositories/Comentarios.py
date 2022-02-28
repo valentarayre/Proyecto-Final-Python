@@ -4,7 +4,7 @@ from ..config import *
 baseDatos = ubicacionDB
 
 def formatDataComentarios(data):
-    nameColums = ('id','id_Movie','id_User','Date')
+    nameColums = ('id','id_Movie','id_User', 'text','Date')
     dataForm = {}
     cont = 0
     
@@ -87,6 +87,7 @@ def allComentariosMovie(idMovie):
     listDatos = []
     for e in datos:
         listDatos.append(formatDataComentarios(e))
+    
     
     if len(listDatos) != 0:
         return listDatos
