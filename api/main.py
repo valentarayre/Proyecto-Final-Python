@@ -1,12 +1,14 @@
 from flask import Flask
-from db.db import createDB
+from flask_cors import CORS
+from src.db.db import createDB
 
 
 app = Flask(__name__)
+CORS(app)
 
 #Importa Lista de Rutas
-from routes.Index_routes import *
+from src.routes.Index_routes import *
 
 if __name__ == '__main__':    
-    createDB()
-    app.run(debug=True)
+   createDB()
+   app.run(debug=True)
