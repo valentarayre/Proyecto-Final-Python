@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vite/vitejs": "^2.3.17",
     "axios": "^0.26.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
