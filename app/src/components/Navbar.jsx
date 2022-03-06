@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,35 +13,51 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MovieId from "./MovieId";
 
-const linkClass =
-  "block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
 
+
+const Class = " text-white text-x1 hover:text-AccentColor transition ease-out duration-500 mr-4"
 export default function App() {
+  let [open,setOpen]=useState(false);
   return (
     <Router>
-      <div>
-        <ul className="bg-white border-gray-200 sm:px-10 py-1.5  dark:bg-gray-800">
-          <div className="container ">
-            <ul className="flex flex-col justify-center mt-3 md:flex-row md:space-x-8 md:mt-0 md:text-xl md:font-medium">
-              <li className="min-w-min">
-                <Link to="/" className={linkClass}>
+      {/* Main contenedor*/}
+      <div className='shadow-md w-full sticky top-0 left-0 z-20'>
+        <div className='md:flex items-center justify-between bg-SecondaryColor py-4 md:px-10 px-7'>
+              
+          {/* MLogo */}
+            <div className="flex font-Bebas ml-2 justify-between items-center">
+              <Link to="/">
+                <span className="cursor-pointer text-white flex">
+                  <img className="h-8 w-8 mt-1" src="https://img.icons8.com/material-outlined/24/4a90e2/two-tickets.png"></img>
+                  <span className=" mt-2 ml-2 text-2xl">Cine</span>
+                  <span className="text-AccentColor mt-2 text-2xl">Ya</span>
+                </span>
+              </Link>
+            </div>
+          {/* Icono hamburguesa */}
+           
+          <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+          <img name={open ? 'close':'menu'} src="https://img.icons8.com/material-outlined/24/4a90e2/menu--v1.png"/>
+          </div>
+          {/* Listado de nav*/}
+          <ul name="list" className={`md:flex md:items-center md:pb-0 pb-9 absolute md:static bg-SecondaryColor md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-17 pt-4 z-30' :'top-[-490px]'}`}>
+              <li>
+                <Link to="/" className={Class}>
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/director" className={linkClass}>
+                <Link to="/director" className={Class}>
                   Directores
                 </Link>
               </li>
-              <li>
-                <Link to="/login" className={linkClass}>
-                  Login
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </ul>
 
+              <Link to="/login">
+              <button className="bg-AccentColor text-white duration-500 px-6 py-2  rounded-lg hover:bg-LigthBlueLg ">Inciar Sesion</button>
+              </Link>  
+          </ul>
+        </div>
+        
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/director" component={Director} />
