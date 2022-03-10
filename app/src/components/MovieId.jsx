@@ -52,22 +52,24 @@ const MovieId = () => {
         
           <div className="flex-row pt-2 ">
             <div className="flex">
-            <h1 className="ml-8 pt-1 font-Roboto font-bold text-white md:text-base ">La matanza de Texas </h1><span className="ml-1 mt-1.5 text-LigthBlueText text-sm " > (1976)</span>
+            <h1 className="ml-8 pt-1 font-Roboto font-bold text-white  md:text-3xl ">La matanza de Texas </h1><span className="ml-1 mt-1.5 text-LigthBlueText text-sm md:text-base md:mt-3" > (1976)</span>
             </div>
-            <p className=" px-8 text-LigthBlueText text-xs ssm:pr-20 md:pr-96 md:text-base ">Cinco amigos se dirigen a una zona rural de Texas para visitar la tumba de un abuelo. En el camino se topan con lo que parece ser una casa abandonada, solo para descubrir algo siniestro dentro. Algo armado con una motosierra.</p>
-            <p className=" mt-1 px-8 text-white text-normal text-sm md:text-base">Director:<span className="ml-1 text-LigthBlueText">Director</span></p>
-            <p className=" mt-1 px-8 text-white text-normal text-sm md:text-base">Categoria :<span className="ml-1 text-LigthBlueText">Terror</span></p>
-          </div>
+            <p className=" px-8 py-2 text-LigthBlueText text-xs ssm:pr-20 md:pr-96 md:text-base  ">Cinco amigos se dirigen a una zona rural de Texas para visitar la tumba de un abuelo. En el camino se topan con lo que parece ser una casa abandonada, solo para descubrir algo siniestro dentro. Algo armado con una motosierra.</p>
+            <p className=" mt-1 px-8 text-LigthBlueText text-normal text-sm md:text-base">Director:<span className="ml-1 text-white">Director</span></p>
+            <p className=" mt-1 px-8 text-LigthBlueText text-normal text-sm md:text-base">Categoria :<span className="ml-1 text-white">Terror</span></p>
+            
+            <p className=" px-8  text-LigthBlueText text-normal text-sm md:text-base mt-8">Editar pelicula :</p>
+      <div className="px-3 mt-4 flex space-x-1 justify-between text-sm text-white m-auto ssm:inline-block"><button className="bg-SecondaryColor hover:bg-AccentColor border h-7 w-36 rounded-xl  md:mx-5 duration-500"> Editar </button><button className="bg-SecondaryColor hover:bg-rose-700 border h-7 w-36 rounded-xl duration-500"> Borrar </button></div>
+            </div>
       </div>
 
 
-      <p className=" px-8  text-LigthBlueText text-normal text-sm md:text-base md:mx-10">Editar pelicula :</p>
-      <div className="px-12 mt-4 flex space-x-1 justify-between text-sm text-white m-auto ssm:inline-block"><button className="bg-AccentColor border h-7 w-36 rounded-xl  md:mx-5"> Editar </button><button className="bg-rose-700 border h-7 w-36 rounded-xl"> Borrar </button></div>
+      
       
 
 
       <div className="  w-screen mx-auto h-12 p-8 ssm:inline-block">
-      <p className=" mt-1 text-white text-normal text-sm  md:mx-10">Comentarios :<span className="ml-1 text-LigthBlueText">8</span></p>
+      <p className=" mt-1 text-white text-normal text-sm  md:mx-10">Comentarios :<span className="ml-1 text-LigthBlueText">{Comentarios.length}</span></p>
       <form className="flex w-full h-fit max-w-xl  rounded-lg px-0 pt-2">
       <div class="flex">
       <input className="bg-transparent border-b-2 text-white w-full text-m pr-1 ssm:w-60 md:w-96  md:mx-10" placeholder='Type Your Comment' ></input>
@@ -81,7 +83,7 @@ const MovieId = () => {
         
       {Comentarios.map(({ name, email}) => (
         <div className={CommentClass}>
-          <div key={name}>{name}</div>
+          <div key={name} className="font-medium text-white mb-2">{name}</div>
           <div>{email}</div>
         </div>
       ))}

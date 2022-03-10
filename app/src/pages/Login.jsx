@@ -39,24 +39,24 @@ const Login = () => {
   } = useForm(initialForm, validationsForm, 'api/auth');
 
   const styles = {
-    
-    fontWeight: "bold",
+    fontSize: "small",
+    fontWeight: "normal",
     color: "#dc3545",
   };
 
 
   return (
     <>
-    <div className="w-screen bg-MainColor h-screen ">
-      <form class=" relative mx-auto h-[470px] top-[70px] bg-white shadow-md rounded w-1/3 px-8 pt-10 pb-6  justify-center " onSubmit={handleSubmit}>
-      <h2 class="text-5xl font-Bebas text-center text-gray-700 dark:text-white">
+    <div className=" bg-MainColor h-screen overflow-x-hidden">
+      <form class=" relative mx-auto h-[470px] top-[70px] bg-BlueLogin shadow-md rounded w-1/3 px-8 pt-10 pb-6  justify-center " onSubmit={handleSubmit}>
+      <h2 class="text-5xl font-Bebas text-center text-white">
       <span className=" mt-2 ml-2 text-4xl">Cine</span>
       <span className="text-AccentColor mt-2 text-4xl">Ya</span>
       </h2>
       
-      <h3 class="mt-1 text-xl font-medium text-center text-gray-600 dark:text-gray-200">Bienvenido de nuevo!</h3>
+      <h3 class="mt-1 text-xl font-medium text-center text-white">Bienvenido de nuevo!</h3>
 
-      <p class="mt-1 text-center text-gray-500 dark:text-gray-400">Inicia sesión</p>
+      <p class="mt-1 text-center text-white">Inicia sesión</p>
         <div className="pt-9">
           <input className="mr-5 shadow appearance-none border rounded  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="email"
@@ -82,8 +82,8 @@ const Login = () => {
           />
           {errors.password && <p style={styles}>{errors.password}</p>}
           </div>
-          <div className="pt-9">
-        <input className ="px-4 py-2 mt-5  leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none"type="submit" value="Enviar" />
+          <div className="pt-9 px-12">
+        <input className ="px-12 py-2 mt-5 w-full  leading-5 text-white transition-colors duration-200 transform bg-AccentColor rounded hover:bg-LigthBlueLg focus:outline-none"type="submit" value="Iniciar Sesión" />
         </div>
         </form>
       {loading && <Loader />}

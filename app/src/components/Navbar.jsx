@@ -12,7 +12,7 @@ import Director from "../pages/Director";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MovieId from "./MovieId";
-
+import Moviecreator from "./Moviecreator"
 
 
 const Class = " text-white text-x1 hover:text-AccentColor transition ease-out duration-500 mr-4"
@@ -47,6 +47,11 @@ export default function App() {
                 </Link>
               </li>
               <li>
+                <Link to="/create" className={Class}>
+                  Crear
+                </Link>
+              </li>
+              <li>
                 <Link to="/director" className={Class}>
                   Directores
                 </Link>
@@ -60,6 +65,7 @@ export default function App() {
         
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/create" component={Moviecreator} />
           <Route path="/director" component={Director} />
           <Route path="/movie" component={MovieId} />
           <Route path="/" component={Home} />

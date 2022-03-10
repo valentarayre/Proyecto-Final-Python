@@ -29,7 +29,9 @@ module.exports = {
         "LigthBlue" : "#366B95",
         "LigthBlueLg" : "#00B6FF",
         "LigthBlueText" : "#8da0bc",
-        "BlancoLeche" :"#FFFFF5"
+        "BlancoLeche" :"#FFFFF5",
+        "BlueLogin" :"#191F38"
+        
       },
     },
   },
