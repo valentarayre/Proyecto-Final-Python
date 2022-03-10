@@ -1,40 +1,54 @@
 import React from 'react'
-
+const DirectorList = [
+  {
+    Nombre: "Ruben Fleischer",
+    Peliculas: 10,
+  },
+  {
+    Nombre: "Christopher Nolan",
+    Peliculas: 4,
+  },
+  {
+    Nombre: "Seth MacFarlane",
+    Peliculas: 3,
+  },
+  {
+    Nombre: "Peter Mortimer",
+    Peliculas: 1,
+  },
+  {
+    Nombre: "Ruben Fleischer",
+    Peliculas: 10,
+  },
+  {
+    Nombre: "Christopher Nolan",
+    Peliculas: 4,
+  },
+  {
+    Nombre: "Seth MacFarlane",
+    Peliculas: 3,
+  },
+  {
+    Nombre: "Peter Mortimer",
+    Peliculas: 1,
+  },
+]
+const DirectorClass = "bg-SecondaryColor mx-8 my-8 p-2 border rounded-md border-LigthBlueText"
 const Director = () => {
   return (
-    <div className='bg-MainColor h-screen px-14 py-10'>
+    <div className='bg-MainColor h-screen px-20 py-16'>
     
-      <h1 className='text-white text-2xl font-Roboto '>Directores</h1>
+      <h1 className='text-white text-2xl font-Roboto mb-4'>Directores</h1>
+      <div className=' grid grid-cols-4'>
 
-<table className="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-800 text-gray-200">
-  <tr className="text-left border-b border-gray-300">
-    <th className="px-4 py-3">Firstname</th>
-    <th className="px-4 py-3">Lastname</th>
-    <th className="px-4 py-3">Age</th>
-    <th className="px-4 py-3">Sex</th>
-  </tr>
-  <tr className="bg-gray-700 border-b border-gray-600">
-    <td className="px-4 py-3">Jill</td>
-    <td className="px-4 py-3">Smith</td>
-    <td className="px-4 py-3">50</td>
-    <td className="px-4 py-3">Male</td>
-  </tr>    
+      {DirectorList.map(({ Nombre, Peliculas}) => (
+        <div className={DirectorClass}>
+          <div key={Nombre} className="font-medium text-white mb-2  text-center pt-1.5 ">{Nombre}<span className='text-LigthBlueText'> ({Peliculas})</span></div>
+        </div>
+      ))}
 
-  <tr className="bg-gray-700 border-b border-gray-600">
-    <td className="px-4 py-3">Jill</td>
-    <td className="px-4 py-3">Smith</td>
-    <td className="px-4 py-3">50</td>
-    <td className="px-4 py-3">Male</td>
-  </tr>    
+      </div>
 
-  <tr className="bg-gray-700 border-b border-gray-600">
-    <td className="px-4 py-3">Jill</td>
-    <td className="px-4 py-3">Smith</td>
-    <td classNames="px-4 py-3">50</td>
-    <td className="px-4 py-3">Male</td>
-  </tr>    
-
-</table>
     </div>
   )
 }
