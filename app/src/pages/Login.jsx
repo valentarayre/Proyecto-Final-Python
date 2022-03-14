@@ -45,10 +45,12 @@ const Login = () => {
   };
 
 
+
+/// Calcular  (altura - altura header )
   return (
     <>
-    <div className=" bg-MainColor h-screen overflow-x-hidden">
-      <form class=" relative mx-auto h-[470px] top-[70px] bg-BlueLogin shadow-md rounded w-1/3 px-8 pt-10 pb-6  justify-center " onSubmit={handleSubmit}>
+    <div className=" bg-MainColor h-[calc(100vh-72px)]  overflow-x-hidden overflow-y-hidden ">
+      <form class=" relative mx-auto h-[470px] top-[70px] bg-BlueLogin shadow-md rounded w-5/6 px-8 pt-10 pb-6 mdl:w-2/3 md:w-1/3 justify-center " onSubmit={handleSubmit}>
       <h2 class="text-5xl font-Bebas text-center text-white">
       <span className=" mt-2 ml-2 text-4xl">Cine</span>
       <span className="text-AccentColor mt-2 text-4xl">Ya</span>
@@ -82,8 +84,8 @@ const Login = () => {
           />
           {errors.password && <p style={styles}>{errors.password}</p>}
           </div>
-          <div className="pt-9 px-12">
-        <input className ="px-12 py-2 mt-5 w-full  leading-5 text-white transition-colors duration-200 transform bg-AccentColor rounded hover:bg-LigthBlueLg focus:outline-none"type="submit" value="Iniciar Sesión" />
+          <div className="pt-9 ">
+        <input className =" px-10 py-2 mt-0  leading-5 text-white transition-colors duration-200 transform bg-AccentColor rounded hover:bg-LigthBlueLg focus:outline-none"type="submit" value="Iniciar Sesión" />
         </div>
         </form>
       {loading && <Loader />}
@@ -91,7 +93,7 @@ const Login = () => {
         <Message msg="Los datos han sido enviados" bgColor="#198754" />
       )}
       {responseError && (
-        <Message msg="Error en la contraseña y/o email" bgColor="#dc3545" />
+        <Message className="bg-rose-100" msg="Error en la contraseña y/o email" bgColor="#dc3545" />
       )}
       
       </div>
