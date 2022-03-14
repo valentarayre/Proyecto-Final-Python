@@ -33,13 +33,13 @@ const DirectorList = [
     Peliculas: 1,
   },
 ]
-const DirectorClass = "bg-SecondaryColor mx-8 my-8 p-2 border rounded-md border-LigthBlueText"
+const DirectorClass = "bg-SecondaryColor mx-2 my-8 p-2 border rounded-md border-LigthBlueText w-32 mdl:mx-8 md:w-48  md:mx-16 "
 const Director = () => {
   return (
-    <div className='bg-MainColor h-screen px-20 py-16'>
+    <div className='bg-MainColor px-5 py-16 min-h-screen'>
     
-      <h1 className='text-white text-2xl font-Roboto mb-4'>Directores</h1>
-      <div className=' grid grid-cols-4'>
+      <h1 className='text-white text-2xl font-Roboto mb-4 mdl:mx-8 md:mx-16'>Directores</h1>
+      <div className='grid grid-cols-2 ssm:grid-cols-3 mdl:grid-cols-3 gap-3 md:gap-0 md:px-12 lg:grid-cols-6'>
 
       {DirectorList.map(({ Nombre, Peliculas}) => (
         <div className={DirectorClass}>

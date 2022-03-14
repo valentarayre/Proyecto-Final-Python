@@ -6,8 +6,14 @@ const Message = ({ msg, bgColor }) => {
     marginBottom: "1rem",
     textAlign: "center",
     color: "#fff",
-    fontWeight: "bold",
+    fontWeight: "semi-bold",
     backgroundColor: bgColor,
+    with: "100%",
+    position : "absolute",
+    zindex : "999",
+    left: "0",
+    right : "0",
+    bottom : "0"
   };
   return (
     <div style={styles}>

@@ -5,8 +5,8 @@ const createmovie = ({ movie }) => {
   return (
     <>
       
-      <div className="h-screen bg-MainColor py-16">
-      <section className="max-w-4xl p-6 mx-auto bg-SecondaryColor rounded-md shadow-md  ">
+      <div className=" bg-MainColor min-h-[calc(100vh-72px)] py-16">
+      <section className=" p-5 mx-2 max-w-4xl  bg-SecondaryColor rounded-md shadow-md sm:p-10 sm:mx-12 md:mx-auto ">
       <h1 className="text-xl font-bold text-white capitalize">Crea una pelicula</h1>
       
       <form>
@@ -54,6 +54,7 @@ const createmovie = ({ movie }) => {
                 </div>
               </div>
             </div>
+            <input className =" px-10 py-2 mt-0  leading-5 text-white transition-colors duration-200 transform bg-AccentColor rounded hover:bg-LigthBlueLg focus:outline-none "type="submit" value="Crear" />
     </div>
       </form>
 
