@@ -4,41 +4,41 @@ import { Link, Redirect, Route, useLocation } from "react-router-dom";
 const Comentarios = [
   {
       name: 'Agustin Mateo',
-      email: 'Bastante bien... 👌'
+      texto: 'Bastante bien... 👌'
   },
 
   {
       name: 'pablobahiablanca',
-      email: 'Esta película tiene la virtud de hacerte perder unos minutos para finalmente maldecir el momento que elegistes verla !!!'
+      texto: 'Esta película tiene la virtud de hacerte perder unos minutos para finalmente maldecir el momento que elegistes verla !!!'
   },
   {
     name: 'JuanAlejoKlldrms',
-    email: 'Mala película.'
+    texto: 'Mala película.'
 },
 
 {
     name: 'Veroypelu',
-    email: '8 ptos'
+    texto: '8 ptos'
 },
 {
   name: 'citizen kane',
-  email: 'excelente película'
+  texto: 'excelente película'
 },
 {
   name: 'oselvaggi',
-  email: 'MA LI SI MA!!! PESIMAS ACTUACIONES Y EL GUION UNA PORQUERIA'
+  texto: 'MA LI SI MA!!! PESIMAS ACTUACIONES Y EL GUION UNA PORQUERIA'
 },
 
 {
   name: 'Miguel Esteban',
-  email: 'Esta mejor la nueva remake, me quede con las ganas'
+  texto: 'Esta mejor la nueva remake, me quede con las ganas'
 }
 ]
 const MovieId = () => {
   const { search } = useLocation();
   const query = new URLSearchParams(search);
   const id = query.get("id");
-  const name = query.get("title");
+
   
   
   //Si no trae un Id lo manda de vuelta
@@ -81,10 +81,10 @@ const MovieId = () => {
       </form>
       <div className="my-6 mx- w-full h-72   text-white sc overflow-y-scroll md:my-12  md:px-10">
         
-      {Comentarios.map(({ name, email}) => (
+      {Comentarios.map(({ name, texto}) => (
         <div className={CommentClass}>
           <div key={name} className="font-medium text-white mb-2">{name}</div>
-          <div>{email}</div>
+          <div>{texto}</div>
         </div>
       ))}
         
