@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
-
+import { useState , useContext} from "react";
+import { LoginContext } from "../helper/Context";
 export const useForm = (initialForm, validateForm, direccion) => {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -10,6 +10,7 @@ export const useForm = (initialForm, validateForm, direccion) => {
 
   const url = `http://127.0.0.1:5000/${direccion}`;
 
+  const { loggedIn , setLoggedIn } = useContext(LoginContext)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -48,8 +49,10 @@ export const useForm = (initialForm, validateForm, direccion) => {
         setResponse(true);
         setForm(initialForm);
         const tokenJson =  JSON.stringify(response.data.token)
-       /*  console.log(tokenJson) */
+        //console.log(tokenJson)
         localStorage.setItem('token',tokenJson);
+        setLoggedIn(true)
+        console.log(setLoggedIn);
         setTimeout(() => setResponse(false), 5000);
       })
       .catch(function (error) {

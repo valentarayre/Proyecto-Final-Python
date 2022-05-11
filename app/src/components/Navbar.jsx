@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,13 +11,33 @@ import Director from "../pages/Director";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MovieId from "./MovieId";
-import Moviecreator from "./Moviecreator"
-
+import Moviecreator from "./Moviecreator";
+import { LoginContext } from "../helper/Context";
 
 const Class = " text-white text-x1 hover:text-AccentColor transition ease-out duration-500 mr-4"
 export default function App() {
-  let [open,setOpen]=useState(false);
-  return (
+  let [open,setOpen]=useState(null);
+
+const { loggedIn , setLoggedIn } = useContext(LoginContext)
+
+
+// si hay un token guardado en LS, retoma la sesion 
+console.log(loggedIn)
+
+  useEffect(() => {
+    const logJSON = window.localStorage.getItem('token')
+    if (logJSON) {
+      setLoggedIn(true)
+    }
+  })
+  
+
+  const LogOut = () =>{
+    localStorage.removeItem('token')
+    setLoggedIn(null)
+  }
+
+  return ( 
     <Router>
       {/* Main contenedor*/}
       <div className='shadow-md w-full sticky top-0 left-0 z-20'>
@@ -46,20 +65,24 @@ export default function App() {
                   Inicio
                 </Link>
               </li>
-              <li>
-                <Link to="/create" className={Class}>
-                  Crear
-                </Link>
-              </li>
+             
+              { loggedIn && <li><Link to="/create" className={Class}>Crear</Link></li>}
+              
               <li>
                 <Link to="/director" className={Class}>
                   Directores
                 </Link>
               </li>
-
-              <Link to="/login">
-              <button className="bg-AccentColor text-white duration-500 px-6 py-2  rounded-lg hover:bg-LigthBlueLg ">Inciar Sesion</button>
-              </Link>  
+              
+              {
+                loggedIn? 
+                
+                <button className="bg-AccentColor text-white duration-500 px-6 py-2  rounded-lg hover:bg-LigthBlueLg " onClick={()=>LogOut()} >Cerrar Sesion</button>
+                :
+                <Link to="/login">
+                <button className="bg-AccentColor text-white duration-500 px-6 py-2  rounded-lg hover:bg-LigthBlueLg ">Iniciar Sesion</button>
+                </Link>
+              }  
           </ul>
         </div>
         
