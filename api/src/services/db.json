@@ -1,0 +1,305 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "Uncharted",
+        "sinopsis": "El cazador de tesoros Victor Sullivan recluta a Nathan Drake para que lo ayude a recuperar una fortuna. Lo que comienza como un atraco se convierte en una competencia contra el despiadado Santiago Moncada.",
+        "director": "Ruben Fleischer",
+        "genero": "Accion",
+        "anio": "2022",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BOTNkN2ZmMzItOTAwMy00MmM5LTg5YTgtNmE5MThkMDE2ODJiXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Agustin Mateo",
+            "comentario": "esta buena"
+          },
+          {
+            "nombre" : "DiTy",
+            "comentario": "ta buena"
+          },
+          {
+            "nombre" : "epinillar",
+            "comentario": "Excelente 8/10"
+          },
+          {
+            "nombre" : "Brian musso",
+            "comentario": "Buena. Sully no tiene bigote \uD83D\uDE44"
+          },
+          {
+            "nombre" : "NoseasKon",
+            "comentario": "Si tienen la oportunidad de verla, veanla, entretiene mucho 9/10"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "El caballero oscuro",
+        "sinopsis": "Cuando la amenaza conocida como el Joker causa estragos y el caos en Gotham City, Batman debe aceptar una de las mayores pruebas psicologicas y fisicas para luchar contra la injusticia.",
+        "director": "Christopher Nolan",
+        "genero": "Accion",
+        "anio": "2008",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "criticocinematico09",
+            "comentario": "avengers infinity war es mucho mejor que esta porqueria"
+          },
+          {
+            "nombre" : "elxfin",
+            "comentario": "Esta es seguramente, la mejor película de super heroes de la historia. Es una obra maestra del cine. La he visto muchas veces porque es totalmente hipnotica. Si la están pasando en tv, no puedes cambiar el canal facilmente, te atrapa así la hayas visto 30 veces. La batuta la lleva el Guason. Que papel! uno de los grandes, enormes papeles de la historia del cine. 10/10. … posdata: En serio hay un simio en los comentarios diciendo que prefiere ver terror porque esto tiene mucho texto….? perezoso abominable e inmundo."
+          },
+           {
+            "nombre" : "Christopher Nolan",
+            "comentario": "Sus comentarios me la ****, esta es the best movie de batman en el mundo"
+          },
+          {
+            "nombre" : "Joker032",
+            "comentario": "Los seres humanos tenemos algo que se llama Emociones somos animales salvajes Joker hace que las persona saque su lado Oscuro y lo que hace es demostrar la verdadera naturaleza humana Harvey Dent se dejo manipular muy facil cuando una persona te saca la persona muy especial decías hacer justicia atreves del asesito aquella persona que le saco la vida o decías que muera despues tu alma y sus manos estan derramada con sangre y jamas te las vas a sacar aveces las personas buenas que tiene mucho sufrimiento se vuelven locos y sadico es la realidad de la vida."
+          },
+          {
+            "nombre" : "Nakkir",
+            "comentario": "Por dios este sujeto es super violento mejor me voy a ver buscando a nemo"
+          }
+        ]
+
+      },
+      {
+        "id": 3,
+        "title": "Interestelar",
+        "sinopsis": "Un equipo de exploradores viaja a traves de un agujero de gusano en el espacio en un intento de garantizar la supervivencia de la humanidad.",
+        "director": "Christopher Nolan",
+        "genero": "Aventura",
+        "anio": "2014",
+        "imgURL": "https://m.media-amazon.com/images/I/81kz06oSUeL._AC_SL1500_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "maxito_12",
+            "comentario": "increible"
+          },
+          {
+            "nombre" : "Kenaiii16",
+            "comentario": "La mejor película sin duda"
+          },
+           {
+            "nombre" : "antoniauwu",
+            "comentario": "fuaa veanla!! muy buena"
+          },
+           {
+            "nombre" : "devilWoman",
+            "comentario": "una locura"
+          },
+           {
+            "nombre" : "Stikg",
+            "comentario": "mi cerebro esta en blanco"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Ted",
+        "sinopsis": "John Bennett, un hombre cuyo deseo de la infancia de dar vida a su oso de peluche se hizo realidad, ahora debe decidir entre mantener la relacion con el oso, Ted, o su novia, Lori.",
+        "director": "Seth MacFarlane",
+        "genero": "Comedia",
+        "anio": "2012",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMTQ1OTU0ODcxMV5BMl5BanBnXkFtZTcwOTMxNTUwOA@@._V1_FMjpg_UX1000_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Jhojan y Sandy",
+            "comentario": "\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02\uD83D\uDE02e muero de la risa, la ame. \uD83D\uDE18\uD83D\uDE18"
+          },
+          {
+            "nombre" : "Brandon f",
+            "comentario": "jajajajajajajajaj"
+          },
+          {
+            "nombre" : "Rene2005r",
+            "comentario": "Es una joya de película 10/10"
+          },
+          {
+            "nombre" : "Andriygetmore",
+            "comentario": "ted no muere pinche"
+          },{
+            "nombre" : "VivaSylaz",
+            "comentario": "ted \uD83D\uDE00"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "El Alpinista",
+        "sinopsis": "Marc-Andre Leclerc sube solo, lejos del foco de atencion. El joven realiza algunos de los ascensos en solitario mas audaces de la historia. Sin camaras, sin margen de error, su enfoque es la esencia de la aventura en solitario.",
+        "director": "Peter Mortimer",
+        "genero": "Documental",
+        "anio": "2021",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BOWY1NTBmOTQtYzgxMi00NjU0LTliNGEtNmUwNmQzZGVjNzhkXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "NatMat",
+            "comentario": "Excelente. (aguante Argentina)"
+          },
+           {
+            "nombre" : "Vilory",
+            "comentario": "Lo unico bueno son los paisajes"
+          },
+           {
+            "nombre" : "Josies",
+            "comentario": "Malisima ! no pierdan su tiempo"
+          },
+           {
+            "nombre" : "jdocchio",
+            "comentario": "Extraordinario; buena direccion y produccion, que personaje para la historia…"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Forrest Gump",
+        "sinopsis": "Las presidencias de Kennedy y Johnson, los acontecimientos de Vietnam, el Watergate y otros eventos historicos se desarrollan a traves de la perspectiva de un hombre de Alabama con un coeficiente intelectual de 75.",
+        "director": "Robert Zemeckis",
+        "genero": "Drama",
+        "anio": "1994",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Juan Carlos Pinzon",
+            "comentario": "excelente pelicula una de mis favoritas"
+          },
+          {
+            "nombre" : "HERNESTOARRE",
+            "comentario": "\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D\uD83D\uDC4D"
+          },
+          {
+            "nombre" : "David yh",
+            "comentario": "Una pelicula genial"
+          },
+          {
+            "nombre" : "albertonisman",
+            "comentario": "alguien me puede decir que tipo de inteligencia posee forrest y jenny? me refiero a los tipos de inteligencia multiples de howard gardner. Es para una tesis. saludos"
+          },
+          {
+            "nombre" : "imerpalma",
+            "comentario": "biennnnn"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Cazafantasmas",
+        "sinopsis": "Una madre soltera y sus dos hijos llegan a una pequeña ciudad, descubriendo su conexión con los cazafantasmas originales y el legado secreto que dejó su abuelo tras de si.",
+        "director": "Jason Reitman",
+        "genero": "Aventura",
+        "anio": "2021",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMmZiMjdlN2UtYzdiZS00YjgxLTgyZGMtYzE4ZGU5NTlkNjhhXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Vilory",
+            "comentario": "Si uno dice que es mala, simplemente esta siendo generoso con la película."
+          },
+          {
+            "nombre" : "juandiego23",
+            "comentario": "es una completa cagada espero que la que va a salir arregle esta mierda"
+          },
+          {
+            "nombre" : "joaqbera",
+            "comentario": "de las peores peliculas … un insulto para las originales"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Hamilton",
+        "sinopsis": "La historia de uno de los padres fundadores de los Estados Unidos y primer Secretario del Tesoro, Alexander Hamilton, rodada en directo en Broadway con el reparto original.",
+        "director": "Thomas Kail",
+        "genero": "Musical",
+        "anio": "2020",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "cupoftea",
+            "comentario": "Simplemente grandiosa. Que extraño ver esto en un lugar como Cuevana, que les encanta poner mucha porqueria palomera (pochoclera)."
+          },
+          {
+            "nombre" : "NifflerBlack",
+            "comentario": "el mejor musical de todos"
+          },
+          {
+            "nombre" : "AlejandroDavid",
+            "comentario": "se escucha raro"
+          },
+          {
+            "nombre" : "Valery88172",
+            "comentario": "Lo ame uwu"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "It Follows",
+        "sinopsis": "Una joven es perseguida por una fuerza sobrenatural tras un encuentro sexual.",
+        "director": "David Robert Mitchell",
+        "genero": "Terror",
+        "anio": "2014",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMmU0MjBlYzYtZWY0MC00MjliLWI3ZmUtMzhlZDVjMWVmYWY4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Bexx616",
+            "comentario": "Según un punto de vista, trata sobre las ETS… Pero igual que final de mrd"
+          },
+          {
+            "nombre" : "SRP196",
+            "comentario": "me acabo de crear esta cuenta solo para expresar mi desprecio y odio hacia el personaje principal y hacia esta pelicula que no tiene nada, ni un poco de sentido. no la vean una mrd por favor mejor vean my little pony por que en serio ni intenten buscar sentido por que ya intente hasta buscando en internet sobre algun demonio a algo pareció de la trama de esta pelicula y ni hablar de la produccion que es una mrd"
+          },
+          {
+            "nombre" : "Jairo_kun",
+            "comentario": "Ahorrate 1 hora con cuarenta minutos de tu vida, no la veas xq el final es una completa mierd4, no tiene ni 2da parte esta disquepelicula, mejor peli hacia yo con mis ahorros de 3 dias, y mi camara de mi huawei, pura porqueria…joto el que se mueva."
+          },
+          {
+            "nombre" : "mellama",
+            "comentario": "mala..."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "La matanza de Texas",
+        "sinopsis": "Cinco amigos se dirigen a una zona rural de Texas para visitar la tumba de un abuelo. En el camino se topan con lo que parece ser una casa abandonada, solo para descubrir algo siniestro dentro. Algo armado con una motosierra.",
+        "director": "Tobe Hooper",
+        "genero": "Terror",
+        "anio": "1974",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMTU1MzY2NDc2MV5BMl5BanBnXkFtZTgwMTc3MTUzMzI@._V1_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "Agustin Mateo",
+            "comentario": "Que clasico!!!"
+          },
+          {
+            "nombre" : "pablobahiablanca",
+            "comentario": "sobrevalorada..."
+          },
+          {
+            "nombre" : "pabloc12",
+            "comentario": "Mi slayer preferido."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Hancook",
+        "sinopsis": "Hancock es un superheroe cuyo comportamiento irreflexivo causa problemas regularmente millonarios. La cosa cambia cuando la persona a la que salva le ayuda a mejorar su imagen publica.",
+        "director": "Peter Berg",
+        "genero": "Accion",
+        "anio": "2008",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMTgyMzc4ODU3NV5BMl5BanBnXkFtZTcwNjk5Mzc1MQ@@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+        "comentarios" : [
+          {
+            "nombre" : "andresvasque02@gmail.com",
+            "comentario": "hola"
+          },
+          {
+            "nombre" : "russito1891",
+            "comentario": "Interesante."
+          }
+        ]
+      }
+    ]
+  }

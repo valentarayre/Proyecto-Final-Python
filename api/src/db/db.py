@@ -5,6 +5,8 @@ from ..config import *
 baseDatos = ubicacionDB
 baseExample = baseExample
 
+# JSON
+jsondb = JsonDB
 
 def createDB():
     global baseDatos

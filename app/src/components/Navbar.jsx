@@ -22,7 +22,7 @@ const { loggedIn , setLoggedIn } = useContext(LoginContext)
 
 
 // si hay un token guardado en LS, retoma la sesion 
-console.log(loggedIn)
+
 
   useEffect(() => {
     const logJSON = window.localStorage.getItem('token')

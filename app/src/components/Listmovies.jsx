@@ -1,96 +1,60 @@
-import React from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import Movie from "./Movie";
+import Loader from "../components/Loader";
+import { LoginContext } from "../helper/Context";
 
-const movies = [
-  {
-    id: 1,
-    title: "Uncharted",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BOTNkN2ZmMzItOTAwMy00MmM5LTg5YTgtNmE5MThkMDE2ODJiXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg"
-  },
-  {
-    id: 2,
-    title: "El caballero oscuro",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
-  },
-  {
-    id: 3,
-    title: "Interestelar",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/I/81kz06oSUeL._AC_SL1500_.jpg"
-  },
-  {
-    id: 4,
-    title: "Ted",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BMTQ1OTU0ODcxMV5BMl5BanBnXkFtZTcwOTMxNTUwOA@@._V1_FMjpg_UX1000_.jpg"
-  },
-  {
-    id: 5,
-    title: "El Alpinista",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BOWY1NTBmOTQtYzgxMi00NjU0LTliNGEtNmUwNmQzZGVjNzhkXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg"
-  },
-  {
-    id: 6,
-    title: "Forrest Gump",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg"
-  },
-  {
-    id: 7,
-    title: "Cazafantasmas",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BMmZiMjdlN2UtYzdiZS00YjgxLTgyZGMtYzE4ZGU5NTlkNjhhXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
-  },
-  {
-    id: 8,
-    title: "Hamilton",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_.jpg"
-  },
-  {
-    id: 9,
-    title: "It Follows",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BMmU0MjBlYzYtZWY0MC00MjliLWI3ZmUtMzhlZDVjMWVmYWY4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg"
-  },
-  {
-    id: 10,
-    title: "La matanza de Texas",
-    sinopsis: "asdasdasdasd",
-    director: "asdasd",
-    genero: "asdasdsad",
-    imgURL:"https://m.media-amazon.com/images/M/MV5BMTU1MzY2NDc2MV5BMl5BanBnXkFtZTgwMTc3MTUzMzI@._V1_.jpg"
+// buscador
+
+const getFilteredItems = (query, items) => {
+  if (!query){
+    return items;
   }
-];
+  return items.filter(movie => movie.title.toLowerCase().includes(query))
+}
 
 const Listmovies = () => {
+
+const [query, setQuery] = useState("")
+const { loggedIn , setLoggedIn } = useContext(LoginContext)
+const [Movies,setMovies] = useState([{}])
+const [Loading,setLoading] = useState(true)
+var myHeaders = new Headers();
+myHeaders.append('Content-Type','text/plain; charset=UTF-8');
+
+useEffect(() => {
+  let url
+  loggedIn?
+  url = "http://127.0.0.1:5000/home"
+  :
+  url = "http://127.0.0.1:5000/"
+  fetch(url, myHeaders).then(
+    res => res.json()
+  ).then(
+    (res) => {
+      setMovies(res)
+      setLoading(false)
+      
+    }
+  ).catch(function (error) {
+    console.log("No se pudo fetchear")
+  });
+},[loggedIn])
+
+ const filtereditems = getFilteredItems(query, Movies)
   return (
-    <div className="aling-center  bg-MainColor px-3 py-10 z-0 h-fit">
+    <div className="aling-center  bg-MainColor px-3 py-10 z-0 min-h-screen">
+        <div className= "flex justify-center pb-10">
+          <div className="w-2/3">
+          <label class="form-label inline-block mb-2 text-white"> Search </label>
+                <input type="Search" onChange={(e) => setQuery(e.target.value.toLowerCase())} className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"></input>
+          </div>
+        </div>
     <div className=" aling-center grid grid-cols-2 ssm:grid-cols-3 mdl:grid-cols-4 gap-3 lg:grid-cols-5 mx-auto bg-MainColor text-white  ">
-      {movies.map((el) => (
-        <Movie movie={el} />
-      ))}
+      {
+      
+     
+      (Loading && <Loader />)}
+      {filtereditems.map(data => <Movie movie={data}/>)}
     </div>
     </div>
     
