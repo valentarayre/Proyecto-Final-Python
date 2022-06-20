@@ -52,7 +52,6 @@ export const useForm = (initialForm, validateForm, direccion) => {
         //console.log(tokenJson)
         localStorage.setItem('token',tokenJson);
         setLoggedIn(true)
-        console.log(setLoggedIn);
         setTimeout(() => setResponse(false), 5000);
       })
       .catch(function (error) {

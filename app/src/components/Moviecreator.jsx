@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const initialForm = {
   titulo: "",
-  año: "",
+  anio: "",
   director: "",
   genero: "",
   sinopsis: "",
@@ -15,23 +15,76 @@ const initialForm = {
 const validationsForm = (form) => {
   const errors = {};
   const regexUrl = /https?:\/\/.*\.(?:png|jpg)/;
+  if (!form.imageUrl.trim()) {
+    errors.imageUrl = "El campo 'Titulo' es requerido";
+  }
   if (!regexUrl.test(form.imageUrl.trim())) {
     errors.imageUrl = "La URL no es valida";
   }
+  if (!form.titulo.trim()) {
+    errors.titulo = "El campo 'Titulo' es requerido";
+  }
+  if (!form.anio.trim()) {
+    errors.anio = "El campo 'Año' es requerido";
+  }
+  if (!form.director.trim()) {
+    errors.director = "El campo 'Directo' es requerido";
+  }
+  if (!form.genero.trim()) {
+    errors.genero = "El campo 'Genero' es requerido";
+  }
+  if (!form.sinopsis.trim()) {
+    errors.sinopsis = "El campo 'Sinopsis' es requerido";
+  }
+
   return errors;
 };
 
-const createmovie = ({ movie }) => {
+
+const PostMovie = (titulo,anio,director,genero,sinopsis,imageUrl) => {
+
+
+
+  var movie = {
+      "anio": `${anio}`,
+      "director": `${director}`,
+      "genero": `${genero}`,
+      "imgURL": `${imageUrl}`,
+      "sinopsis":`${sinopsis}`,
+      "title": `${titulo}`
+    }
+
+
+ fetch( `http://127.0.0.1:5000/creator`,{
+    method:'POST',
+    mode: 'cors',
+    body: JSON.stringify(movie),
+    headers: {
+      "Content-type": "application/json"
+    }
+  }).then( res => res.json()
+  ).then( data => console.log(data),localStorage.setItem("PeliculaCreada",JSON.stringify(movie)),
+    
+    console.log("se creo")
+  ).catch(function (error) {
+    console.log("No se pudo crear")
+  });
+
+ 
+
+} 
+
+
+
+
+
+
+const createmovie = ({  }) => {
   const {
-    form,
     errors,
     loading,
-    response,
-    responseError,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useForm(initialForm, validationsForm, 'api/auth');
+    handleBlur
+  } = useForm(initialForm, validationsForm,"/creator");
 
   const styles = {
     fontSize: "small",
@@ -39,6 +92,16 @@ const createmovie = ({ movie }) => {
     color: "#dc3545",
   };
  
+  const [titulo,setTitulo] = useState('')
+  const [anio,setAnio] = useState('')
+  const [director,setDirector] = useState('')
+  const [genero,setGenero] = useState('')
+  const [sinopsis,setSinopsis] = useState('')
+  const [imageUrl,setImageUrl] = useState('')
+
+
+
+
   return (
     <>
       
@@ -46,39 +109,114 @@ const createmovie = ({ movie }) => {
       <section className=" p-5 mx-2 max-w-4xl  bg-SecondaryColor rounded-md shadow-md sm:p-10 sm:mx-12 md:mx-auto ">
       <h1 className="text-xl font-bold text-white capitalize">Crea una pelicula</h1>
       
-      <form>
+      <form id="form">
       <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
                 <label class="text-white dark:text-gray-200" for="username">Titulo</label>
-                <input id="username" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></input>
+                <input  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="titulo"
+                name="titulo"
+                placeholder="Escribe el titulo"
+                onBlur={handleBlur}
+                onChange={(e) => setTitulo(e.target.value)}
+                value={titulo}
+                required
+                />
+                {errors && <p style={styles}>{errors.titulo}</p>}
             </div>
             <div>
                 <label class="text-white dark:text-gray-200" for="username">Año</label>
-                <input id="year" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></input>
+                <input  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="anio"
+                name="anio"
+                placeholder="Escribe el año"
+                onBlur={handleBlur}
+                onChange={(e) => setAnio(e.target.value)}
+                value={anio}
+                required
+                />
+                
+                {errors && <p style={styles}>{errors.anio}</p>}
             </div>
             <div>
                 <label class="text-white dark:text-gray-200" for="emailAddress">Director</label>
-                <input id="emailAddress" type="email" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></input>
+                <input class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="director"
+                name="director"
+                placeholder="Escribe el director"
+                onBlur={handleBlur}
+                onChange={(e) => setDirector(e.target.value)}
+                value={director}
+                required
+                />
+                {errors && <p style={styles}>{errors.director}</p>}
+            
             </div>
-            <div>
+            <div>  
                 <label class="text-white dark:text-gray-200" for="emailAddress">Genero</label>
-                <input id="emailAddress" type="email" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></input>
+                <select name='genero' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="genero"
+                onBlur={handleBlur}
+                onChange={(e) => setGenero(e.target.value)}
+                value={genero}
+                required
+                style={{ width: '100%', height: '40px'}}>
+                <option value='Accion'>
+                Accion
+                </option>
+                <option value='Aventuras'>
+                Aventuras
+              </option>
+              <option value='Comedia' selected>
+                Comedia
+              </option>
+              <option value='Documental'>
+                Documental
+              </option>
+              <option value='Drama'>
+                Drama
+              </option>
+              <option value='Fantasia'>
+                Fantasia
+              </option>
+              <option value='Musical'>
+                Musical
+                </option>
+                <option value='Supenso'>
+                Supenso
+              </option>
+              <option value='Terror'>
+                Terror
+              </option>
+          </select>
+
+                {errors && <p style={styles}>{errors.genero}</p>}
             </div>
             <div>
                 <label class="text-white dark:text-gray-200" for="passwordConfirmation">Sinopsis</label>
-                <textarea id="textarea" type="textarea" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></textarea>
+                <textarea class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="sinopsis"
+                name="sinopsis"
+                placeholder="Escribe la sinopsis"
+                onBlur={handleBlur}
+                onChange={(e) => setSinopsis(e.target.value)}
+                value={sinopsis}
+                required/>
+                {errors && <p style={styles}>{errors.sinopsis}</p>}
+            
             </div>
             
             <div>
                 <label class="block text-sm font-medium text-white">
-                Imagen (URL)
+                Imagen Url
                 </label>
                 <input id="emailAddress" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                placeholder="Escribe la URL"
                 type="imageUrl"
                 name="imageUrl"
                 onBlur={handleBlur}
-                onChange={handleChange}
-                value={form.imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+                value={imageUrl}
                 required
                 />
                 {errors.imageUrl && <p style={styles}>{errors.imageUrl}</p>}
@@ -89,7 +227,7 @@ const createmovie = ({ movie }) => {
    
     
     
-    <button className="w-80 h-12 py-2 mt-12  text-center  text-white transition-colors duration-200 transform bg-AccentColor rounded  focus:outline-none hover:bg-LigthBlueLg "value="Crear">Crear</button>
+    <button className="w-80 h-12 py-2 mt-12  text-center  text-white transition-colors duration-200 transform bg-AccentColor rounded  focus:outline-none hover:bg-LigthBlueLg " onClick={()=> PostMovie(titulo,anio,director,genero,sinopsis,imageUrl)}>Crear</button>
      
       </form>
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="44207db8-4330-4a64-8caa-625e49aa0e9c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/controllers/Users.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/controllers/Users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/db/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/db/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/repositories/Comentarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/repositories/Comentarios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/repositories/Movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/repositories/Movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/routes/Index_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/Index_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/services/Movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/services/Movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Listmovies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Listmovies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Movie.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Movie.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/MovieId.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/MovieId.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Moviecreator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Moviecreator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/hooks/useForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hooks/useForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/Director.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/Director.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AqPZmvpgCigQpBvc4YgenRSsgP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44207db8-4330-4a64-8caa-625e49aa0e9c" name="Changes" comment="" />
+      <created>1655734228243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655734228243</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -20,3 +20,11 @@ User "correo1@gmail.com" Password "12345" <br>
 User "correo2@gmail.com" Password "12345" <br>
 User "correo3@gmail.com" Password "12345" <br>
 User "correo4@gmail.com" Password "12345" <br>
+
+## - Documentacion PostMan
+
+https://www.getpostman.com/collections/6321072920935797a606
+
+## - Plantilla de diseño
+
+https://www.figma.com/file/I7qWYZ9QghZdwkkFU02w9S/Index?node-id=0%3A1

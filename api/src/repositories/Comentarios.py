@@ -3,6 +3,8 @@ from ..config import *
 
 baseDatos = ubicacionDB
 
+
+
 def formatDataComentarios(data):
     nameColums = ('id','id_Movie','id_User','Date')
     dataForm = {}

@@ -1,6 +1,10 @@
 import sqlite3 as sql
 from ..config import *
 
+
+jsonMovie = JsonDB
+
+
 baseDatos = ubicacionDB
 
 def formatDataMovies(data):
