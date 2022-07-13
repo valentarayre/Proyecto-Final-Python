@@ -9,6 +9,6 @@ CORS(app)
 #Importa Lista de Rutas
 from src.routes.Index_routes import *
 
-if __name__ == '__main__':    
+if __name__ == '__main__':
    createDB()
    app.run(debug=True)

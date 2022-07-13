@@ -1,10 +1,13 @@
 from http import HTTPStatus
 import json
-from ..repositories.Movies import *
 from flask import Flask , jsonify, request
-
-
 from flask_cors import CORS
+
+from ..config import *
+
+
+jsonMovie = JsonDB
+baseDatos = ubicacionDB
 
 db = open(jsonMovie)
 data = json.load(db)
@@ -12,10 +15,9 @@ movies = data['movies']
 
 
 
-# GET Generos                           # ESTA BIEN
+# GET Generos
 
-
-def get_Generos():
+def get_generos():
     try:
         listaGeneros = []
         if movies:
@@ -32,9 +34,9 @@ def get_Generos():
 
 
 
-# GET (con Input) DIRECTORES (solo nombres)                  #ESTA BIEN
+# GET (con Input) DIRECTORES (solo nombres)
 
-def json_GetDirectoresInput():
+def get_directores_input():
     try:
         nombreDirector = request.get_json()
         ListaPeliculas = []
@@ -57,7 +59,7 @@ def json_GetDirectoresInput():
 
 # GET DIRECTORES + Numero de peliculas
 
-def json_GetDirectores():                    # Funciona
+def get_directores():
     try:
         JsonFormat = []
         di = dict()
@@ -87,7 +89,7 @@ def json_GetDirectores():                    # Funciona
 
 # TEST GET DIRECTORES + LISTA DE PELICULAS
 
-def get_DirectoresFull():    #Funca
+def get_directores_movies():
     try:
         JsonFormat = []
         di = dict()
@@ -116,20 +118,23 @@ def get_DirectoresFull():    #Funca
 
 
 
-# GET COMENTARIOS                          #BIEN
-def json_GetComments(id):
-    if movies:
-        for movie in movies:
-            if movie["id"] == int(id):
-                info = (movie['comentarios'])
-                return jsonify(info), HTTPStatus.OK
-        return jsonify({"Error": "No hay pelicula con ese ID"}), HTTPStatus.BAD_REQUEST
-    else:
-        return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
+# GET COMENTARIOS
+def get_comments(id):
+    try:
+        if movies:
+            for movie in movies:
+                if movie["id"] == int(id):
+                    info = (movie['comentarios'])
+                    return jsonify(info), HTTPStatus.OK
+            return jsonify({"Error": "No hay pelicula con ese ID"}), HTTPStatus.BAD_REQUEST
+        else:
+            return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
+    except Exception as ex:
+        return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 
-# POST COMENTARIO                   #TESTEADO
+# POST COMENTARIO
 def create_comment(id):
     try:
         new_comment = request.get_json()
@@ -154,10 +159,10 @@ def create_comment(id):
 
 
 
-# GET MOVIES no Log (solo muestra las ultimas 10 peliculas) #FUNCA
+# GET MOVIES no Log (solo muestra las ultimas 10 peliculas)
 
 
-def json_GetMoviesNoLog():
+def get_movies_no_log():
     try:
         if not movies:
             return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
@@ -165,7 +170,7 @@ def json_GetMoviesNoLog():
     except Exception as ex:
         return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
-def json_GetMovies(): #GET MOVIES  # Funca
+def get_movies():
     try:
         if not movies:
             return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
@@ -173,9 +178,21 @@ def json_GetMovies(): #GET MOVIES  # Funca
     except Exception as ex:
         return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
+# Devuelve solo las peliculas que tienen foto
+def get_movies_fotos():
+    listMovies = []
+    try:
+        if not movies:
+            return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
+        for movie in movies:
+            if 'imgURL' in movie:
+                listMovies.append(movie)
+            return jsonify(movies), HTTPStatus.OK
+    except Exception as ex:
+        return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
 # GET MOVIE POR ID
-def get_MovieId(id):
+def get_movie_id(id):
     try:
         if movies:
             for movie in movies:
@@ -188,7 +205,7 @@ def get_MovieId(id):
         return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
 
-# POST MOVIES    #Esta bien
+# POST MOVIES
 
 def create_movie():
     try:
@@ -240,71 +257,39 @@ def delete_movie(id):
 
 
 
-# PUT MOVIES  
+# PUT MOVIES
 
-# ERROR IDS (en front end)
-
-def json_PutMovieTest(id):
-    film_edit = request.get_json()
-    ide = int(id)
-    if not film_edit:
-        return jsonify({"ERROR": 'No hay datos a cambiar'}), HTTPStatus.BAD_REQUEST
-    if "anio" and "director" and "genero" and "imgURL" and "sinopsis" and "title" not in film_edit:
-        return jsonify({"ERROR": 'Falta informacion'})
-    if movies:
-        for movie in movies:
-            if movie["id"] == ide:
-                comments = movie["comentarios"]
-                movie = {
-                    "title": film_edit["title"],
-                    "sinopsis": film_edit["sinopsis"],
-                    "director": film_edit["director"],
-                    "genero": film_edit["genero"],
-                    "anio": film_edit["anio"],
-                    "id": ide,
-                    "imgURL": film_edit["imgURL"],
-                    "comentarios": comments
-                }
-                return jsonify({"OK":"SE ENCONTRO"})
-        return jsonify({"MAL":"No se encontro pelicula con ese ID"})
-    return jsonify({"MAL": "No se encontro peliculas "})
-
-
-
-
-
-
-
-
-def json_PutMovie(id):
+def put_movie(id):
     new_data = request.get_json()
     pos = int(id)
-    if movies:
-        ids = [movie["id"] for movie in movies]
-        print(id)
-        if not new_data:
-            return jsonify({"ERROR": 'No hay datos a cambiar'}), HTTPStatus.BAD_REQUEST
-        if pos not in ids:
-            return jsonify({"ERROR": "No hay peliculas con ese ID"}), HTTPStatus.NO_CONTENT
-        if "anio" and "director" and "genero" and "imgURL" and "sinopsis" and "title" not in new_data:
-            return jsonify({"ERROR": 'Falta informacion'}), HTTPStatus.BAD_REQUEST
+    try:
+        if movies:
+            ids = [movie["id"] for movie in movies]
+            print(id)
+            if not new_data:
+                return jsonify({"ERROR": 'No hay datos a cambiar'}), HTTPStatus.BAD_REQUEST
+            if pos not in ids:
+                return jsonify({"ERROR": "No hay peliculas con ese ID"}), HTTPStatus.NO_CONTENT
+            if "anio" and "director" and "genero" and "imgURL" and "sinopsis" and "title" not in new_data:
+                return jsonify({"ERROR": 'Falta informacion'}), HTTPStatus.BAD_REQUEST
+            else:
+                pelicula = movies[pos - 1]
+                comm = pelicula["comentarios"]
+                movies[pos - 1] = {
+                "title": new_data["title"],
+                "sinopsis": new_data["sinopsis"],
+                "director": new_data["director"],
+                "genero": new_data["genero"],
+                "anio": new_data["anio"],
+                "id": pos,
+                "imgURL": new_data["imgURL"],
+                "comentarios": comm
+                }
+                return jsonify({'mensaje':'good'}), HTTPStatus.OK
         else:
-            pelicula = movies[pos - 1]
-            comm = pelicula["comentarios"]
-            movies[pos - 1] = {
-            "title": new_data["title"],
-            "sinopsis": new_data["sinopsis"],
-            "director": new_data["director"],
-            "genero": new_data["genero"],
-            "anio": new_data["anio"],
-            "id": pos,
-            "imgURL": new_data["imgURL"],
-            "comentarios": comm
-            }
-            print(comm)
-            return jsonify({'mensaje':'good'}), HTTPStatus.OK
-    else:
-        return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
+            return jsonify({"Error": "No hay peliculas"}), HTTPStatus.NO_CONTENT
+    except Exception as ex:
+        return jsonify({"Error": "Ha ocurrido un error inesperado"}), HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 
