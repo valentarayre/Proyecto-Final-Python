@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 
-
-const DirectorClass = " cursor-pointer min-w-max w-24 bg-SecondaryColor mx-2 my-8 p-2 border rounded-md border-LigthBlueText  mdl:mx-8 md:w-48  md:mx-16 "
+// minimo ssm:(475) mdl:(576px) md:(960) lg:(1440px)
+const DirectorClass = "inline-grid cursor-pointer bg-SecondaryColor border rounded-md border-LigthBlueText mx-2 my-8 p-2 w-32 mdl:w-44 md:w-52"
 const Director = () => {
 
   const [Directores,setDirectores] = useState([{}])
@@ -30,9 +30,8 @@ const Director = () => {
 
   
   const RenderModal = (nombreDirector) => {
-    console.log(moviesDirector)
     return(
-      <div className="modal-bg-container fixed inset-0 bg-gray-700 bg-opacity-75 pt-12 "> 
+      <div className="modal-bg-container fixed inset-0 bg-gray-700 bg-opacity-75 pt-12 min-h-screen"> 
       <section className=" p-5 mx-2 max-w-4xl  bg-SecondaryColor rounded-md shadow-md sm:p-10 sm:mx-12 md:mx-auto fixed top-40 right-0 left-0 z-50 h-fit min-h-1/3 overflow-y-auto">
         <div className="relative w-full space-x-96">
           <h1 className="text-xl  inline-block font-bold text-white capitalize">Peliculas del director {nombreDirector} :</h1>
@@ -77,12 +76,12 @@ const Director = () => {
   return (
     <div className='bg-MainColor px-5 py-16 min-h-screen'>
     
-      <h1 className='text-white text-2xl font-Roboto mb-4 mdl:mx-8 md:mx-16'>Directores</h1>
+      <h1 className='text-white text-2xl font-Roboto mb-4  md:mx-16'>Directores</h1>
       <div className=''>
       
       
       
-      <div className="grid grid-cols-2 ssm:grid-cols-3 mdl:grid-cols-3 gap-3 md:gap-0 md:px-12 lg:grid-cols-6">
+      <div className="grid grid-cols-2 ssm:grid-cols-3 ssm:gap-2 mdl:grid-cols-3 gap-3 md:gap-0 md:grid-cols-4 md:px-12 lg:grid-cols-6">
 
       {
       Loading?
@@ -90,7 +89,7 @@ const Director = () => {
       :
       Directores.map(({ Nombre , Peliculas}) => (
         <div className={DirectorClass}>
-          <div key={Nombre} className="font-medium text-white text-center p-1.5"  onClick={() => dataModal(Nombre,Peliculas,true)}>{Nombre}<span className='text-LigthBlueText'> ( { Peliculas.length} )</span></div>
+          <div key={Nombre} className="font-medium text-white text-center p-1.5"  onClick={() => dataModal(Nombre,Peliculas,true)}>{Nombre}<span className='text-LigthBlueText'>  { Peliculas.length} </span></div>
         </div>
       ))
       

@@ -11,6 +11,7 @@ module.exports = {
     // => @media (min-width: 576px) { ... }
     'mdl': '576px',
     // => @media (min-width: 576px) { ... }
+    'mdlx':'630px',
     'md': '960px',
     // => @media (min-width: 960px) { ... }
     'lg': '1440px',

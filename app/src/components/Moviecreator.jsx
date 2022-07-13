@@ -7,7 +7,7 @@ const initialForm = {
   titulo: "",
   anio: "",
   director: "",
-  genero: "",
+  genero: "Accion",
   sinopsis: "",
   imageUrl: ""
 };
@@ -29,9 +29,6 @@ const validationsForm = (form) => {
   }
   if (!form.director.trim()) {
     errors.director = "El campo 'Directo' es requerido";
-  }
-  if (!form.genero.trim()) {
-    errors.genero = "El campo 'Genero' es requerido";
   }
   if (!form.sinopsis.trim()) {
     errors.sinopsis = "El campo 'Sinopsis' es requerido";
@@ -63,11 +60,9 @@ const PostMovie = (titulo,anio,director,genero,sinopsis,imageUrl) => {
       "Content-type": "application/json"
     }
   }).then( res => res.json()
-  ).then( data => console.log(data),localStorage.setItem("PeliculaCreada",JSON.stringify(movie)),
-    
-    console.log("se creo")
-  ).catch(function (error) {
-    console.log("No se pudo crear")
+  ).then( data => localStorage.setItem("PeliculaCreada",JSON.stringify(movie)),
+  ).then(window.location.replace(`http://127.0.0.1:3000/`)).catch(function (error) {
+    console.log("error")
   });
 
  
@@ -78,11 +73,12 @@ const PostMovie = (titulo,anio,director,genero,sinopsis,imageUrl) => {
 
 
 
-
 const createmovie = ({  }) => {
   const {
     errors,
     loading,
+    response,
+    responseError,
     handleBlur
   } = useForm(initialForm, validationsForm,"/creator");
 
@@ -95,12 +91,12 @@ const createmovie = ({  }) => {
   const [titulo,setTitulo] = useState('')
   const [anio,setAnio] = useState('')
   const [director,setDirector] = useState('')
-  const [genero,setGenero] = useState('')
+  const [genero,setGenero] = useState('Accion')
   const [sinopsis,setSinopsis] = useState('')
   const [imageUrl,setImageUrl] = useState('')
 
-
-
+  const [submitDisabled,setsubmitDisabled] = useState(true)
+  
 
   return (
     <>
@@ -226,10 +222,9 @@ const createmovie = ({  }) => {
     </div>
    
     
+    <button disabled={!titulo || !sinopsis || !genero || !anio || !director || !imageUrl} className="w-80 h-12 py-2 mt-12  text-center  text-white transition-colors duration-200 transform bg-AccentColor rounded  focus:outline-none hover:bg-LigthBlueLg " onClick={()=> PostMovie(titulo,anio,director,genero,sinopsis,imageUrl)}>Crear</button>
     
-    <button className="w-80 h-12 py-2 mt-12  text-center  text-white transition-colors duration-200 transform bg-AccentColor rounded  focus:outline-none hover:bg-LigthBlueLg " onClick={()=> PostMovie(titulo,anio,director,genero,sinopsis,imageUrl)}>Crear</button>
-     
-      </form>
+    </form>
 
 
       </section>

@@ -17,7 +17,7 @@ def auth():
         return jsonify({"msg":"Falta Parametros"}), HTTPStatus.BAD_REQUEST
         
 
-def ValidToken():
+def valid_token():
     try:
         encoded_token = request.get_json()
         if not encoded_token or "token" not in encoded_token:

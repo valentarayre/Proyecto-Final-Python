@@ -106,7 +106,7 @@ fetch( `http://127.0.0.1:5000/editmovie${id}`,{
 }
   const renderDeleteBtn = (id) => {
     return(
-    <button onClick={() => eliminarPelicula(id)}className="bg-SecondaryColor hover:bg-rose-700 border h-7 w-36 rounded-xl duration-500"> Borrar </button>
+    <button onClick={() => eliminarPelicula(id)}className="bg-SecondaryColor hover:bg-rose-700 border h-7 w-36 rounded-xl duration-500 ssm:w-24 "> Borrar </button>
     )
   }
 
@@ -116,8 +116,8 @@ fetch( `http://127.0.0.1:5000/editmovie${id}`,{
      
       <div>
       <p className=" px-8  text-LigthBlueText text-normal text-sm md:text-base mt-8">Editar pelicula :</p>
-      <div className="px-3 mt-4 flex space-x-1 justify-between text-sm text-white m-auto ssm:inline-block">
-      <button onClick={() => setEdit(true) } className="bg-SecondaryColor hover:bg-AccentColor border h-7 w-36 rounded-xl  md:mx-5 duration-500" > Editar </button>
+      <div className="px-12 mt-4 flex space-x-1 justify-between text-sm text-white m-auto ssm:inline-block ssm:px-2 ssm:mr-4 ">
+      <button onClick={() => setEdit(true) } className="bg-SecondaryColor hover:bg-AccentColor border h-7 w-36 rounded-xl  md:mx-5 duration-500 ssm:w-24" > Editar </button>
       {
         (canDelete &&  renderDeleteBtn(id))
       
@@ -131,7 +131,7 @@ fetch( `http://127.0.0.1:5000/editmovie${id}`,{
 
   const renderModal = () => {
     return(
-    <div className="modal-bg-container fixed inset-0 bg-gray-700 bg-opacity-75 pt-12"> 
+    <div className="modal-bg-container fixed inset-0 bg-gray-700 bg-opacity-75 pt-12 overflow-y-auto"> 
     <section className=" p-5 mx-2 max-w-4xl  bg-SecondaryColor rounded-md shadow-md sm:p-10 sm:mx-12 md:mx-auto ">
     <div className="relative w-full space-x-96">
     <h1 className="text-xl  inline-block font-bold text-white capitalize">Edita la pelicula</h1>
@@ -263,15 +263,15 @@ fetch( `http://127.0.0.1:5000/editmovie${id}`,{
 
   return (
     <div className=" min-h-screen overflow-x-hidden  bg-MainColor relative sm:h-max ">
-      <div className=" block relative pt-10 mx-auto  h-2.5/5 py-7 ssm:flex ssm:mx-10">
+      <div className=" block relative pt-10 ml-auto mr-auto h-2.5/5 py-7 ssm:flex md:ml-[0px] md:ml-[0px] ">
         
-        <img className=" mx-auto h-36 ssm:h-52 md:h-80 md:px-10 contain  " src= { img }></img>
+        <img className="ml-auto mr-auto h-36 ssm:h-52 md:h-80 md:px-10 contain mdlx:ml-24 mdlx:mr-8 md:ml-8 md:mr-1" src= { img }></img>
         
           <div className="flex-row pt-2 ">
             <div className="flex">
             <h1 className="ml-8 pt-1 font-Roboto font-bold text-white  md:text-3xl "> { title }</h1><span className="ml-1 mt-1.5 text-LigthBlueText text-sm md:text-base md:mt-3" > ({ anio })</span>
             </div>
-            <p className=" px-8 py-2 text-LigthBlueText text-xs ssm:pr-20 md:pr-96 md:text-base  ">{ sinopsis }</p>
+            <p className=" px-8 py-2 text-LigthBlueText text-xs ssm:pr-20  md:pr-96  md:text-base  ">{ sinopsis }</p>
             <p className=" mt-1 px-8 text-LigthBlueText text-normal text-sm md:text-base">Director :<span className="ml-1 text-white">{director}</span></p>
             <p className=" mt-1 px-8 text-LigthBlueText text-normal text-sm md:text-base">Categoria :<span className="ml-1 text-white">{genero}</span></p>
             {

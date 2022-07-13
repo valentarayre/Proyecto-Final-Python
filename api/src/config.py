@@ -1,6 +1,6 @@
 from distutils.command.config import config
 
-# Base de datos sin usar
+# Base de datos
 
 ubicacionDB = './src/db/db.sqlite3'
 baseExample = './src/db/db-example.sqlite3.sql'
@@ -9,5 +9,5 @@ baseExample = './src/db/db-example.sqlite3.sql'
 
 secretJWT = 'ojaposdjopajsopdjasodjasodjop'
 
-#Direccion DB JSON
+#Direccion Base de datos JSON
 JsonDB = './src/services/db.json'
